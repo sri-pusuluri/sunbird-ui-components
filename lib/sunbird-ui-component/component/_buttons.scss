@@ -148,6 +148,43 @@ input[type="button"] {
     }
 }
 
+.sb-btn-loading {
+    position: relative;
+  }
+  
+  .sb-btn-loading:before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      margin: -.64285714em 0 0 -.64285714em;
+      width: 1.28571429em;
+      height: 1.28571429em;
+      border-radius: 500rem;
+      border: .2em solid rgba(0,0,0,.15);
+  }
+  
+  .sb-btn-loading:after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      margin: -.64285714em 0 0 -.64285714em;
+      width: 1.28571429em;
+      height: 1.28571429em;
+      -webkit-animation: button-spin .6s linear;
+      animation: button-spin .6s linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      border-radius: 500rem;
+      border-color: #fff transparent transparent;
+      border-style: solid;
+      border-width: .2em;
+      -webkit-box-shadow: 0 0 0 1px transparent;
+      box-shadow: 0 0 0 1px transparent;
+  }
+  
+
 // to cleanup
 .ui.dodger-blue.basic.label {
     border: 1px solid $primary-color !important;	

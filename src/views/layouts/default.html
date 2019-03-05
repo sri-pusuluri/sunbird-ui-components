@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{{title}}</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+	{{#if fabricator}}<link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/fabricator/styles/f.css">{{/if}}
+
+	<!-- toolkit styles -->
+	<link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/styles/toolkit.css">
+	<!-- /toolkit styles -->
+	<!-- default styles -->
+	<link rel="stylesheet" href="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/default/styles/c/codecopy.min.css">
+	<!-- /default styles -->
+
+</head>
+<body>
+
+	{{#if fabricator}}
+		{{> f-icons}}
+		{{> f-menu}}
+		<div class="f-container">
+			{{> f-control-bar}}
+	{{/if}}
+
+
+	{% body %}
+
+
+	{{#if fabricator}}
+		</div>
+	<script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/fabricator/scripts/f.js"></script>
+	{{/if}}
+	<script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/default/scripts/c/codecopy.min.js"></script>
+	<!-- toolkit scripts -->
+	<script src="{{#if baseurl}}{{ baseurl }}/{{/if}}assets/toolkit/scripts/toolkit.js"></script>
+	<!-- /toolkit scripts -->
+	<!-- toolkit scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/ng2-semantic-ui@0.9.7/bundles/ng2-semantic-ui.umd.min.js"></script>
+	<!-- /toolkit scripts -->
+
+</body>
+</html>
