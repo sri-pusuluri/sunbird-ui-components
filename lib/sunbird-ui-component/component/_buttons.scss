@@ -7,30 +7,44 @@ input[type="button"] {
     width: 100%;
   }
 }
-
 // base button styles
 .sb-btn {
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     outline: 0;
     display: inline-block;
-    margin-left: 0.25rem;
     border: 1px solid;
-    cursor:pointer;
     color: $white-color;
+    cursor: pointer;
     @include margin(0px 0px 0px 8px);
     min-width:($base-block-space * 8);
-    line-height: normal;
+    line-height: inherit;
     @include border-radius(3px);
     text: {
         transform: capitalize;
         decoration: none;
     }
+    &:hover {
+        opacity: 1;
+    }
+    &.disabled,
+    &.disabled:hover,
+    &:disabled,
+    &:disabled:hover {
+        background-color: $gray-100;
+        color:$gray-200;
+        border:1px solid $gray-100;
+        cursor: not-allowed;
+    }
+    &+.sb-btn {
+        margin:0 $base-block-space 0 0;
+    }
 }
-// button lin
+// button link
 .sb-btn-link {
     background:none;
     border:0;
+    color:$primary-color;
     text-decoration: underline;
     &:hover {
         font-weight:$font-weight-bold;
@@ -43,14 +57,13 @@ input[type="button"] {
 }
 .sb-btn-xs {
     height:($base-block-space * 3);
-    padding:($base-block-space * 0) ($base-block-space * 1);
+    padding: ($base-block-space * 0) ($base-block-space * 1);
     font-size:$font-size-sm;
 }
+//primary button style
 .sb-btn-normal {
-    height:$base-btn-normal-height;
-    padding: $block-padding-y-x;
+    height:($base-block-space * 4);
     font-size:$font-size-sm;
-    @include border-radius(4px);
 }
 .sb-btn-sm {
     height:($base-block-space * 5);
@@ -62,21 +75,8 @@ input[type="button"] {
 }
 .sb-btn-lg {
   height:($base-block-space * 7);
-  padding: ($base-block-space * 0) ($base-block-space * 3);
+  padding: ($base-block-space * 3);
   font-size:$font-size-lg;
-}
-// disabled button
-.sb-btn-disabled {
-    background-color: $gray-100;
-    color:$gray-200;
-    border:1px solid $gray-100;
-    cursor: not-allowed;
-}
-.sb-btn-outline-disabled {
-    background-color: $white-color;
-    color:$gray-100;
-    border:1px solid $gray-100;
-    cursor: not-allowed;
 }
 // default outline colored btns
 .sb-btn-outline-primary{
@@ -97,9 +97,9 @@ input[type="button"] {
 } 
 .sb-btn-outline-warning{
     @include btn-theme-bgwhite($tertiary-color);
-}
+}   
 .sb-btn-outline-error{
-    @include btn-theme-bgwhite($red);
+    @include btn-theme-bgwhite($red-400);
 } 
 .sb-btn-outline-gray{
     @include btn-theme-bgwhite($gray-800);
@@ -144,46 +144,9 @@ input[type="button"] {
 .sb-btn-error{
     @include btn-theme($danger-color);
     &:hover,&:active {
-        background: $red-400;
+        background: $red-100;
     }
 }
-
-.sb-btn-loading {
-    position: relative;
-  }
-  
-  .sb-btn-loading:before {
-      position: absolute;
-      content: '';
-      top: 50%;
-      left: 50%;
-      margin: -.64285714em 0 0 -.64285714em;
-      width: 1.28571429em;
-      height: 1.28571429em;
-      border-radius: 500rem;
-      border: .2em solid rgba(0,0,0,.15);
-  }
-  
-  .sb-btn-loading:after {
-      position: absolute;
-      content: '';
-      top: 50%;
-      left: 50%;
-      margin: -.64285714em 0 0 -.64285714em;
-      width: 1.28571429em;
-      height: 1.28571429em;
-      -webkit-animation: button-spin .6s linear;
-      animation: button-spin .6s linear;
-      -webkit-animation-iteration-count: infinite;
-      animation-iteration-count: infinite;
-      border-radius: 500rem;
-      border-color: #fff transparent transparent;
-      border-style: solid;
-      border-width: .2em;
-      -webkit-box-shadow: 0 0 0 1px transparent;
-      box-shadow: 0 0 0 1px transparent;
-  }
-  
 
 // to cleanup
 .ui.dodger-blue.basic.label {
@@ -273,4 +236,34 @@ input[type="button"] {
 .ui.red.labels .label{
     background: $danger-color !important;
     border-color: $danger-color !important;
+}
+
+// disabled button
+.sb-btn-disabled,
+.sb-btn-primary[disabled],
+.sb-btn-secondary[disabled],
+.sb-btn-tertiary[disabled],
+.sb-btn-info[disabled],
+.sb-btn-success[disabled],
+.sb-btn-warning[disabled],
+.sb-btn-error[disabled] {
+    background-color: $gray-100;
+    border:1px solid $gray-100;
+    color:$gray-200;
+    cursor: not-allowed;
+}
+.sb-btn-outline-disabled,
+.sb-btn-outline-primary[disabled],
+.sb-btn-outline-secondary[disabled],
+.sb-btn-outline-tertiary[disabled],
+.sb-btn-outline-info[disabled],
+.sb-btn-outline-success[disabled],
+.sb-btn-outline-warning[disabled],
+.sb-btn-outline-error[disabled],
+.sb-btn-outline-gray[disabled] {
+    background-color: $white-color;
+    border:1px solid $gray-100;
+    color:$gray-100;
+    cursor: not-allowed;
+    font-weight: normal;
 }
