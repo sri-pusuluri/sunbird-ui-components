@@ -1,4 +1,5 @@
 // global styles
+
 // *{
 //   transition: all 300ms ease-in-out
 //   }
@@ -7,22 +8,30 @@ body {
   height: 100%;
   font-size:$font-size-base;
 }
+
 body {
-  // background:$bg-body;
+  background:$bg-body;
   position: relative;
   font-family: $font-stack-en;
   letter-spacing: 0.2px;
   height: auto;
+  background: $white-color;
+  color: $body-color;
 }
+
 *[lang="en"] body {
   font-family: $font-stack-en;
 }
+
 *[lang="hi"] body {
   font-family: $font-stack-hi;
 }
+
 *[lang="ur"] body {
   font-family: $font-stack-ur;
 }
+
+
 button,
 input,
 textarea,
@@ -74,25 +83,31 @@ h5,
 .ui.category.search>.results .category>.name {
   font-family: inherit;
 }
+
 .ui.tiny.header .icon {
   line-height: 1;
   font-size: 0.75em;
 }
+
 .ui.pagination.menu {
   flex-wrap: wrap;
 }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
+
 .ui.dimmer {
   background-color: rgba(0, 0, 0, 0.35);
 }
+
 .ui.modal>.close {
   opacity: 1;
 }
+
 .ui.dimmer:not(.inverted)::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 1);
 }

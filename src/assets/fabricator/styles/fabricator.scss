@@ -64,3 +64,16 @@ code, :not(pre) > code[class*='language-'], pre[class*='language-'] {
   visibility: visible;
   opacity: 1;
 }
+
+.f-container {
+  padding: 0 3em;
+}
+
+.f-item-heading {
+  font-size:14px;
+  color: #333;font-weight: normal;
+}
+h2.f-item-heading {
+  font-size:24px;
+  color: #024f9d;
+}
