@@ -14,11 +14,9 @@ input[type="button"] {
     user-select: none;
     outline: 0;
     display: inline-block;
-    margin-left: 0.25rem;
     border: 1px solid;
     cursor:pointer;
     color: $white-color;
-    @include margin(0px 0px 0px 8px);
     min-width:($base-block-space * 8);
     line-height: normal;
     @include border-radius(3px);
@@ -148,8 +146,32 @@ input[type="button"] {
     }
 }
 
-.sb-btn-loading {
-    position: relative;
+
+
+
+ .sb-btn-loading-spinner {
+    padding: 8px 16px 8px 8px;
+  }
+
+  @keyframes spinner-border {
+    to { transform: rotate(360deg); }
+  }
+
+
+
+  .loading-spinner { 
+    width: 1rem;
+    height: 1rem;
+    margin-right:5px;
+    border-width: .2em;
+    display: inline-block;
+    vertical-align: text-bottom;
+    border: .15em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+
   }
   
   .sb-btn-loading:before {
@@ -183,94 +205,149 @@ input[type="button"] {
       -webkit-box-shadow: 0 0 0 1px transparent;
       box-shadow: 0 0 0 1px transparent;
   }
-  
 
-// to cleanup
-.ui.dodger-blue.basic.label {
-    border: 1px solid $primary-color !important;	
-    border-radius: 4px;
-    color: $primary-color;
+
+// Buttons with icon
+
+.sb-right-icon-btn {
+    padding: 8px 8px 8px 16px;
+    i.icon{
+        margin-left:$base-block-space;
+        margin-right:0;
+    }
+}
+.sb-left-icon-btn {
+    padding: 8px 16px 8px 8px;
+    i.icon{
+        margin-right:8px;
+    }
+}
+
+//Buttons toggle
+
+.sb-toggle {
+    min-height: 24px;
+    position: relative;
+    display: inline-block;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    outline: 0;
+    vertical-align: baseline;
+    font-style: normal;
+    min-height: 17px;
     font-size: 1rem;
-    font-weight: 300;
-    padding: 4px 16px;
+    line-height: 17px;
+    min-width: 17px;
+    input {
+        width: 3.5rem;
+        height: 24px;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0!important;
+        outline: 0;
+        z-index: 3;
+    }
+    label {
+        min-height: 1.5rem;
+        padding-left: 4.5rem;
+        color: rgba(0,0,0,.87);
+        position: relative;
+        display: block;
+        outline: 0;
+        font-size: 1em;
+        &:before {
+            display: block;
+            position: absolute;
+            content: '';
+            z-index: 1;
+            transform: none;
+            border: none;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,.05);
+            box-shadow: none;
+            width: 3.5rem;
+            height: 24px;
+            border-radius: 500rem;
+            background: #024F9D!important;
+            transition: border .1s ease,opacity .1s ease,transform .1s ease,box-shadow .1s ease,-webkit-transform .1s ease;
+        
+        }
+        &:after {
+            background: #fff linear-gradient(transparent,rgba(0,0,0,.05));
+            position: absolute;
+            content: ''!important;
+            opacity: 1;
+            z-index: 2;
+            border: none;
+            width: 22px;
+            height: 22px;
+            top: 1px;
+            left: 0;
+            border-radius: 500rem;
+            -webkit-transition: background .3s ease,left .3s ease;
+            transition: background .3s ease,left .3s ease;
+        } 
+    }
+    input~label:after {
+        left: 0.1rem;
+        box-shadow: none;
+    }
+    
 
 }
-.ui.semi-circular.dodger-blue.basic.label {
-    border: 1px solid $primary-color !important;
-    border-radius: 18.5px;
-    color: $primary-color;
-    font-size: 1.16rem;
-    padding: 10px 27px;
+
+
+// button groups
+
+.btn-group {
+    border: 1px solid rgba(34,36,38,.15);
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-direction: row;
+    font-size: 0;
+    vertical-align: baseline;
+    margin: 0 .25em 0 0;
+    .sb-btn {
+        background: #F2F2F2;
+        border-left: 1px solid rgba(34,36,38,.15);
+        flex: 1 0 auto;
+        margin: 0;
+        border-radius: 0;
+        margin: 0;
+        border:0;
+        color: rgba(0,0,0,.95);
+        min-width: ($base-block-space * 5)
+        &:first-child {
+            border-left: none;
+            margin-left: 0;
+            border-top-left-radius: .28571429rem;
+            border-bottom-left-radius: .28571429rem;
+        }
+        &:active, &.active {
+            background-color: #fff;
+            color: #024F9D;
+        }
+        .icon {
+            margin: 0;
+            vertical-align: top;
+        }
+
+    }
+    
 }
 
-.ui.semi-circular.dodger-blue.button {
-    border: 1px solid $primary-color;
-    border-radius: 18.5px;
-    background: $primary-color;
-    color: #fff;
-    font-size: 1rem;    
-    font-weight: 100;
-    padding: 6px 27px;
+
+//dashed buttons
+
+.sb-btn-dashed {
+  border: 0.5px solid #024F9D;
+  border-style: dashed;
+  background-color: #fff;
+  color: #024f9d;
 }
 
-.circular-placeholder {
-	border: 6px solid #fff;
-	background-color: #fff;
-    box-shadow: 0 0 6px 0 rgba(0,0,0,0.38);
-    border-radius: 100%;
-    height: 92px;
-    width: 92px;
-}
-.ui.button.rounded{
-    border-radius: 20px;
-}
-.ui.explore.blue.button {  
-    background-color: $primary-color;
-    padding: 10px 30px;
-}
-.ui.explore.blue.button:hover {  
-    opacity: 0.8;
-}
-.ui.explore.blue.button:active {  
-    opacity: 0.9;
-}
-.ui.basic.explore.blue.button {  
-    background-color: #fff;
-    border: 0.5px solid $primary-color;
-    box-shadow: none;
-    color: $primary-color;
-    font-weight: 700;
-    height:36px;
-    padding: 10px 30px;
-}
-.ui.basic.explore.blue.button:hover {  
-    opacity: 0.8;
-}
-.ui.basic.explore.blue.button:active {  
-    opacity: 0.9;
-}
-.ui.blue.button,
-.ui.blue.buttons .button{
-    background-color: $primary-color !important;
-    color: #fff !important;
-}
-.ui.primary.button, 
-.ui.primary.buttons .button{
-    background-color: $primary-color !important;
-    color: #fff !important;
-}
-.ui.basic.primary.button,
-.ui.basic.primary.buttons .button{
-    color: $primary-color !important;
-    background: transparent !important;
-}
-.ui.basic.blue.button,
-.ui.basic.blue.buttons .button{
-    color: $primary-color !important;
-    background: transparent !important;
-}
-.ui.red.label, 
-.ui.red.labels .label{
-    background: $danger-color !important;
-    border-color: $danger-color !important;
-}

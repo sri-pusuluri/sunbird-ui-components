@@ -5,7 +5,8 @@
     max-width: 100%;
 }
 .sb-field {
-    margin-bottom: 1.143rem;
+    position: relative;
+    margin-bottom: 0.5714rem;
     .sb-input-icon {
         position: absolute;
         top: 0;
@@ -23,6 +24,7 @@
         border-radius: .2143rem;
         opacity: .45;
         pointer-events: none;
+        border: 1px solid #F2F2F2;
     } 
 }
 .sb-input {
@@ -56,6 +58,25 @@
   
   }
 
+  .sb-textarea {
+    border-radius: .2143rem;
+    height: 12rem;
+    min-height: 8rem;
+    max-height: 24rem;
+    padding: 0.5714rem;
+    width: 100%;
+    line-height: 1.5;
+    font-size: 0.8571rem;
+    overflow: auto;
+    resize: vertical;
+    &:focus {
+      border: 0.5px solid #005DA2;
+    }
+    &:hover {
+      border: 0.5px solid #7AB4EE; 
+    }
+  }
+
 .sb-form-row {
     display: flex;
     flex-wrap: wrap;
@@ -73,6 +94,8 @@ input[required], input.required {
 label {
     display: inline-block;
     margin-bottom: 0.5714rem;
+    font-size: 0.8571rem;
+    font-weight: bold;
 }
 
 small {
@@ -80,19 +103,3 @@ small {
     font-weight: 400;
 }
 
-.form-text {
-    display: block;
-    margin-top: .25rem;
-}
-
-.text-disabled {
-  color: #F2F2F2;
-}
-
-.text-error {
-  color: #FF4558;
-}
-
-.text-success {
-  color: #07BC81;
-}

@@ -74,7 +74,16 @@
 							<a href="components.html#buttons">Buttons</a>
 						</li>
 						<li>
+							<a href="components.html#forms">Forms</a>
+						</li>
+						<li>
 							<a href="components.html#modal">Modal</a>
+						</li>
+						<li>
+							<a href="components.html#tabs">Tabs</a>
+						</li>
+						<li>
+							<a href="components.html#toggle">Toggle</a>
 						</li>
 					</ul>
 				</li>
@@ -168,6 +177,47 @@
 
 	
 		</div>
+		<div class="f-item-group" id="buttons.button-group">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Button Group</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<div class="btn-group">
+	<button class="sb-btn sb-btn-normal">
+		<i class="plus icon"></i>
+	</button>
+	<button class="sb-btn sb-btn-normal active">
+		<i class="plus icon"></i>
+	</button>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;div class&#x3D;&quot;btn-group&quot;&gt;
+	&lt;button class&#x3D;&quot;sb-btn sb-btn-normal&quot;&gt;
+		&lt;i class&#x3D;&quot;plus icon&quot;&gt;&lt;/i&gt;
+	&lt;/button&gt;
+	&lt;button class&#x3D;&quot;sb-btn sb-btn-normal active&quot;&gt;
+		&lt;i class&#x3D;&quot;plus icon&quot;&gt;&lt;/i&gt;
+	&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+	
+		</div>
 		<div class="f-item-group" id="buttons.button-states">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Button States</h3>
@@ -234,6 +284,62 @@
 
 	
 		</div>
+		<div class="f-item-group" id="buttons.dashed-button">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Dashed Button</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<button class="sb-btn sb-btn-normal sb-btn-dashed">Basic Button</button>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-dashed&quot;&gt;Basic Button&lt;/button&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="buttons.icon-button">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Icon Button</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<button class="sb-btn sb-btn-normal sb-btn-primary sb-right-icon-btn">right icon button <i class="home icon"></i></button>
+<button class="sb-btn sb-btn-normal sb-btn-primary sb-left-icon-btn"><i class="home icon"></i>left icon button </button>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-primary sb-right-icon-btn&quot;&gt;right icon button &lt;i class&#x3D;&quot;home icon&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-primary sb-left-icon-btn&quot;&gt;&lt;i class&#x3D;&quot;home icon&quot;&gt;&lt;/i&gt;left icon button &lt;/button&gt;</code></pre>
+
+	
+		</div>
 		<div class="f-item-group" id="buttons.loading-button">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Loading Button</h3>
@@ -254,10 +360,16 @@
 
 
 <div class="f-item-preview">
-	<button class="sb-btn sb-btn-normal sb-btn-loading">Primary loading</button>
+	<button class="sb-btn sb-btn-loading-spinner sb-btn-primary">
+	<div class="loading-spinner" role="status" aria-hidden="true"></div>
+	Primary loading
+</button>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup" id="myInput">&lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-loading&quot;&gt;Primary loading&lt;/button&gt;</code></pre>
+	<pre><code class="language-markup" id="myInput">&lt;button class&#x3D;&quot;sb-btn sb-btn-loading-spinner sb-btn-primary&quot;&gt;
+	&lt;div class&#x3D;&quot;loading-spinner&quot; role&#x3D;&quot;status&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/div&gt;
+	Primary loading
+&lt;/button&gt;</code></pre>
 
 	
 		</div>
@@ -293,6 +405,315 @@
 &lt;button class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-sm&quot;&gt;small&lt;/button&gt;
 &lt;button class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-md&quot;&gt;medium&lt;/button&gt;
 &lt;button class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-lg&quot;&gt;large&lt;/button&gt;</code></pre>
+
+	
+		</div>
+
+</div>
+
+
+<div class="f-item-group" id="forms">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Forms</h2>
+	</div>
+		<div class="f-item-group" id="forms.checkbox">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Checkbox</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<div class="sb-checkbox sb-checkbox-primary">
+	<input type="checkbox" name="example">
+	<label>Make my profile visible</label>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;div class&#x3D;&quot;sb-checkbox sb-checkbox-primary&quot;&gt;
+	&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;example&quot;&gt;
+	&lt;label&gt;Make my profile visible&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.input-disabled">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Input Disabled</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<div class="sb-field">
+		<input class="sb-input" disabled type="text" placeholder="Enter Mobile Number">
+	</div>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;input class&#x3D;&quot;sb-input&quot; disabled type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Enter Mobile Number&quot;&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.input-with-error-msg">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Input With Error Msg</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<div class="sb-field">
+		<input class="sb-input sb-error">
+	</div>
+	<small class="text-error">Enter phone number</small>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;input class&#x3D;&quot;sb-input sb-error&quot;&gt;
+	&lt;/div&gt;
+	&lt;small class&#x3D;&quot;text-error&quot;&gt;Enter phone number&lt;/small&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.input-with-icon">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Input With Icon</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<label>Input with icon</label>
+	<div class="sb-field">
+		<input class="sb-input" type="text" placeholder="Enter Mobile Number">
+		<i class="search icon sb-input-icon"></i>
+	</div>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;label&gt;Input with icon&lt;/label&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;input class&#x3D;&quot;sb-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Enter Mobile Number&quot;&gt;
+		&lt;i class&#x3D;&quot;search icon sb-input-icon&quot;&gt;&lt;/i&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.input-with-required-field">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Input With Required Field</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<label>Required field</label>
+	<div class="sb-field">
+		<input class="sb-input required" required>
+	</div>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;label&gt;Required field&lt;/label&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;input class&#x3D;&quot;sb-input required&quot; required&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.input-with-success-message">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Input With Success Message</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<div class="sb-field">
+		<input class="sb-input sb-success">
+	</div>
+	<small class="text-success">Both password are matching</small>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;input class&#x3D;&quot;sb-input sb-success&quot;&gt;
+	&lt;/div&gt;
+	&lt;small class&#x3D;&quot;text-success&quot;&gt;Both password are matching&lt;/small&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.radiobutton">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Radiobutton</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="#" class="checker">
+	<p>
+		<input type="radio" id="test1" name="radio-group" disabled="disabled" checked>
+		<label for="test1">Radio Button label</label>
+	</p>
+	<p>
+		<input type="radio" id="test2" name="radio-group">
+		<label for="test2">Peach</label>
+	</p>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;#&quot; class&#x3D;&quot;checker&quot;&gt;
+	&lt;p&gt;
+		&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;test1&quot; name&#x3D;&quot;radio-group&quot; disabled&#x3D;&quot;disabled&quot; checked&gt;
+		&lt;label for&#x3D;&quot;test1&quot;&gt;Radio Button label&lt;/label&gt;
+	&lt;/p&gt;
+	&lt;p&gt;
+		&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;test2&quot; name&#x3D;&quot;radio-group&quot;&gt;
+		&lt;label for&#x3D;&quot;test2&quot;&gt;Peach&lt;/label&gt;
+	&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.text-area">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Text Area</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<label>textarea</label>
+	<div class="sb-field">
+		<textarea rows="4" class="sb-textarea" placeholder="Enter summary"></textarea>
+	</div>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;label&gt;textarea&lt;/label&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;textarea rows&#x3D;&quot;4&quot; class&#x3D;&quot;sb-textarea&quot; placeholder&#x3D;&quot;Enter summary&quot;&gt;&lt;/textarea&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
 
 	
 		</div>
@@ -615,6 +1036,98 @@
     &lt;/div&gt;
 &lt;/sui-modal&gt;
  --&gt;</code></pre>
+
+	
+		</div>
+
+</div>
+
+
+<div class="f-item-group" id="tabs">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Tabs</h2>
+	</div>
+		<div class="f-item-group" id="tabs.tab">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Tab</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<div class="sb-secondary-pointing-menu ">
+	<a class="item" suiTabHeader="1">First</a>
+	<a class="item" suiTabHeader="2">Second</a>
+	<a class="item" suiTabHeader="3">Third</a>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;div class&#x3D;&quot;sb-secondary-pointing-menu &quot;&gt;
+	&lt;a class&#x3D;&quot;item&quot; suiTabHeader&#x3D;&quot;1&quot;&gt;First&lt;/a&gt;
+	&lt;a class&#x3D;&quot;item&quot; suiTabHeader&#x3D;&quot;2&quot;&gt;Second&lt;/a&gt;
+	&lt;a class&#x3D;&quot;item&quot; suiTabHeader&#x3D;&quot;3&quot;&gt;Third&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+	
+		</div>
+
+</div>
+
+
+<div class="f-item-group" id="toggle">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Toggle</h2>
+	</div>
+		<div class="f-item-group" id="toggle.toggle">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Toggle</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<div class="field">
+	<div class="sb-toggle">
+		<input type="checkbox" checked="">
+		<label>
+			Toggle checkbox
+		</label>
+	</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;div class&#x3D;&quot;field&quot;&gt;
+	&lt;div class&#x3D;&quot;sb-toggle&quot;&gt;
+		&lt;input type&#x3D;&quot;checkbox&quot; checked&#x3D;&quot;&quot;&gt;
+		&lt;label&gt;
+			Toggle checkbox
+		&lt;/label&gt;
+	&lt;/div&gt;</code></pre>
 
 	
 		</div>
