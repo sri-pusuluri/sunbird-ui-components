@@ -17,7 +17,6 @@ input[type="button"] {
     color: $white-color;
     cursor: pointer;
     min-width:($base-block-space * 8);
-    line-height: inherit;
     @include border-radius(3px);
     text: {
         transform: capitalize;
@@ -51,7 +50,7 @@ input[type="button"] {
     
 }
 // button sizes
-.sb-btn-xs, .sb-btn-normal, .sb-btn-sm,.sb-btn-md {
+.sb-btn-xs, .sb-btn-normal, .sb-btn-sm, .sb-btn-md {
     padding: ($base-block-space * 1) ($base-block-space * 2);
 }
 .sb-btn-xs {
@@ -74,7 +73,7 @@ input[type="button"] {
 }
 .sb-btn-lg {
   height:($base-block-space * 7);
-  padding: ($base-block-space * 3);
+  padding: ($base-block-space * 2) ($base-block-space * 3);
   font-size:$font-size-lg;
 }
 // default outline colored btns

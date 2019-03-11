@@ -805,7 +805,6 @@ input[type="button"].btn-block {
   color: #fff;
   cursor: pointer;
   min-width: 64px;
-  line-height: inherit;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -851,7 +850,7 @@ input[type="button"].btn-block {
 
 .sb-btn-lg {
   height: 56px;
-  padding: 24px;
+  padding: 16px 24px;
   font-size: 1.429rem; }
 
 .sb-btn-outline-primary {
@@ -1301,8 +1300,7 @@ small {
     font-size: 1.143rem;
     padding: 8px 16px;
     border-bottom: 0 solid #cccccc;
-    min-height: 40px;
-    line-height: 9.143rem; }
+    min-height: 40px; }
   .sb-modal .ui.modal .sb-modal-content {
     min-height: 100px;
     padding: 16px; }
@@ -1722,7 +1720,6 @@ input[type="button"].btn-block {
   color: #fff;
   cursor: pointer;
   min-width: 64px;
-  line-height: inherit;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1768,7 +1765,7 @@ input[type="button"].btn-block {
 
 .sb-btn-lg {
   height: 56px;
-  padding: 24px;
+  padding: 16px 24px;
   font-size: 1.429rem; }
 
 .sb-btn-outline-primary {
