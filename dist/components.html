@@ -1,0 +1,1865 @@
+<!doctype html>
+<html lang="">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+	<link rel="stylesheet" href="assets/fabricator/styles/f.css">
+
+	<!-- toolkit styles -->
+	<link rel="stylesheet" href="assets/toolkit/styles/toolkit.css">
+	<!-- /toolkit styles -->
+	<!-- default styles -->
+	<link rel="stylesheet" href="assets/default/styles/c/codecopy.min.css">
+	<!-- /default styles -->
+
+</head>
+<body>
+
+		<!-- fabricator icons -->
+		<svg style="display: none;">
+			<symbol id="f-icon-code" viewBox="0 0 512 512">
+				<path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
+			</symbol>
+			<symbol id="f-icon-notes" viewBox="0 0 512 512">
+				<path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
+			</symbol>
+			<symbol id="f-icon-labels" viewBox="0 0 512 512">
+				<path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
+			</symbol>
+			<symbol id="f-icon-menu" viewBox="0 0 512 512">
+				<path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
+			</symbol>
+			<symbol id="f-icon-settings" viewBox="0 0 512 512">
+				<path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
+			</symbol>
+		</svg>
+		<!-- /fabricator icons -->
+		<!-- fabricator menu -->
+		<div class="f-menu">
+		
+			<div class="f-controls">
+				<div class="f-control f-global-control" data-f-toggle-control="labels" title="Toggle Labels">
+					<svg>
+						<use xlink:href="#f-icon-labels" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="notes" title="Toggle Notes">
+					<svg>
+						<use xlink:href="#f-icon-notes" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="code" title="Toggle Code">
+					<svg>
+						<use xlink:href="#f-icon-code" />
+					</svg>
+				</div>
+			</div>
+		
+			<ul>
+		
+				<li>
+					<a href="index.html" class="f-menu__heading">Overview</a>
+				</li>
+		
+				<li>
+					<a href="components.html" class="f-menu__heading">Components</a>
+					<ul>
+						<li>
+							<a href="components.html#buttons">Buttons</a>
+						</li>
+						<li>
+							<a href="components.html#forms">Forms</a>
+						</li>
+						<li>
+							<a href="components.html#loader">Loader</a>
+						</li>
+						<li>
+							<a href="components.html#modal">Modal</a>
+						</li>
+						<li>
+							<a href="components.html#search">Search</a>
+						</li>
+						<li>
+							<a href="components.html#tables">Tables</a>
+						</li>
+						<li>
+							<a href="components.html#tabs">Tabs</a>
+						</li>
+						<li>
+							<a href="components.html#toggle">Toggle</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="structures.html" class="f-menu__heading">Structures</a>
+					<ul>
+						<li>
+							<a href="structures.html#form">Form</a>
+						</li>
+					</ul>
+				</li>
+		
+				<li>
+					<a href="pages.html" class="f-menu__heading">Pages</a>
+					<ul>
+						<li>
+							<a href="pages/home.html" target="_blank">Home</a>
+						</li>
+					</ul>
+				</li>
+		
+				<li>
+					<a href="docs.html" class="f-menu__heading">Docs</a>
+					<ul>
+						<li>
+							<a href="docs.html#javascript">Javascript</a>
+						</li>
+					</ul>
+				</li>
+		
+			</ul>
+		
+		
+		</div>
+		<!-- /fabricator menu -->
+		<div class="f-container">
+			<div class="f-control-bar">
+				<div class="f-control f-menu-toggle">
+					<svg>
+						<use xlink:href="#f-icon-menu" />
+					</svg>
+				</div>
+			</div>
+
+
+	
+<h1 data-f-toggle="labels">Components</h1>
+
+
+<div class="f-item-group" id="buttons">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Buttons</h2>
+	</div>
+		<div class="f-item-group" id="buttons.basic-button">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Basic Button</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<button class="sb-btn sb-btn-outline-primary sb-btn-normal">Basic Button</button>
+<button class="sb-btn sb-btn-outline-secondary sb-btn-normal">Secondary</button>
+<button class="sb-btn sb-btn-outline-tertiary sb-btn-normal">Tertiary</button>
+<button class="sb-btn sb-btn-outline-info sb-btn-normal">Info</button>
+<button class="sb-btn sb-btn-outline-success sb-btn-normal">Success</button>
+<button class="sb-btn sb-btn-outline-warning sb-btn-normal">Warning</button>
+<button class="sb-btn sb-btn-outline-error sb-btn-normal">Error</button>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;button class&#x3D;&quot;sb-btn sb-btn-outline-primary sb-btn-normal&quot;&gt;Basic Button&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-outline-secondary sb-btn-normal&quot;&gt;Secondary&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-outline-tertiary sb-btn-normal&quot;&gt;Tertiary&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-outline-info sb-btn-normal&quot;&gt;Info&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-outline-success sb-btn-normal&quot;&gt;Success&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-outline-warning sb-btn-normal&quot;&gt;Warning&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-outline-error sb-btn-normal&quot;&gt;Error&lt;/button&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="buttons.button-group">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Button Group</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<div class="btn-group">
+	<button class="sb-btn sb-btn-normal">
+		<i class="plus icon"></i>
+	</button>
+	<button class="sb-btn sb-btn-normal active">
+		<i class="plus icon"></i>
+	</button>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;div class&#x3D;&quot;btn-group&quot;&gt;
+	&lt;button class&#x3D;&quot;sb-btn sb-btn-normal&quot;&gt;
+		&lt;i class&#x3D;&quot;plus icon&quot;&gt;&lt;/i&gt;
+	&lt;/button&gt;
+	&lt;button class&#x3D;&quot;sb-btn sb-btn-normal active&quot;&gt;
+		&lt;i class&#x3D;&quot;plus icon&quot;&gt;&lt;/i&gt;
+	&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="buttons.button-states">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Button States</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<button class="sb-btn sb-btn-disabled sb-btn-normal">Primary Disable</button>
+<button class="sb-btn sb-btn-outline-disabled sb-btn-normal">Basic Button Disable</button>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;button class&#x3D;&quot;sb-btn sb-btn-disabled sb-btn-normal&quot;&gt;Primary Disable&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-outline-disabled sb-btn-normal&quot;&gt;Basic Button Disable&lt;/button&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="buttons.colored-button">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Colored Button</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<button class="sb-btn sb-btn-primary sb-btn-normal">Primary Button</button>
+<button class="sb-btn sb-btn-secondary sb-btn-normal">Secondary</button>
+<button class="sb-btn sb-btn-tertiary sb-btn-normal">Tertiary</button>
+<button class="sb-btn sb-btn-warning sb-btn-normal">warning</button>
+<button class="sb-btn sb-btn-error sb-btn-normal">Error</button>
+<button class="sb-btn sb-btn-info sb-btn-normal">Info</button>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;button class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-normal&quot;&gt;Primary Button&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-secondary sb-btn-normal&quot;&gt;Secondary&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-tertiary sb-btn-normal&quot;&gt;Tertiary&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-warning sb-btn-normal&quot;&gt;warning&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-error sb-btn-normal&quot;&gt;Error&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-info sb-btn-normal&quot;&gt;Info&lt;/button&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="buttons.dashed-button">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Dashed Button</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<button class="sb-btn sb-btn-normal sb-btn-dashed">Basic Button</button>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-dashed&quot;&gt;Basic Button&lt;/button&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="buttons.icon-button">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Icon Button</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<button class="sb-btn sb-btn-normal sb-btn-primary sb-right-icon-btn">right icon button <i class="home icon"></i></button>
+<button class="sb-btn sb-btn-normal sb-btn-primary sb-left-icon-btn"><i class="home icon"></i>left icon button </button>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-primary sb-right-icon-btn&quot;&gt;right icon button &lt;i class&#x3D;&quot;home icon&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-primary sb-left-icon-btn&quot;&gt;&lt;i class&#x3D;&quot;home icon&quot;&gt;&lt;/i&gt;left icon button &lt;/button&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="buttons.loading-button">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Loading Button</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<button class="sb-btn sb-btn-loading-spinner sb-btn-primary">
+	<div class="loading-spinner" role="status" aria-hidden="true"></div>
+	Primary loading
+</button>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;button class&#x3D;&quot;sb-btn sb-btn-loading-spinner sb-btn-primary&quot;&gt;
+	&lt;div class&#x3D;&quot;loading-spinner&quot; role&#x3D;&quot;status&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/div&gt;
+	Primary loading
+&lt;/button&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="buttons.size">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Size</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<button class="sb-btn sb-btn-primary sb-btn-xs">mini</button>
+<button class="sb-btn sb-btn-primary sb-btn-normal">normal</button>
+<button class="sb-btn sb-btn-primary sb-btn-sm">small</button>
+<button class="sb-btn sb-btn-primary sb-btn-md">medium</button>
+<button class="sb-btn sb-btn-primary sb-btn-lg">large</button>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;button class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-xs&quot;&gt;mini&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-normal&quot;&gt;normal&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-sm&quot;&gt;small&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-md&quot;&gt;medium&lt;/button&gt;
+&lt;button class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-lg&quot;&gt;large&lt;/button&gt;</code></pre>
+
+	
+		</div>
+
+</div>
+
+
+<div class="f-item-group" id="forms">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Forms</h2>
+	</div>
+		<div class="f-item-group" id="forms.checkbox">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Checkbox</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<div class="sb-checkbox sb-checkbox-primary">
+	<input type="checkbox" name="example">
+	<label>Make my profile visible</label>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;div class&#x3D;&quot;sb-checkbox sb-checkbox-primary&quot;&gt;
+	&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;example&quot;&gt;
+	&lt;label&gt;Make my profile visible&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.input-disabled">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Input Disabled</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<div class="sb-field">
+		<input class="sb-input" disabled type="text" placeholder="Enter Mobile Number">
+	</div>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;input class&#x3D;&quot;sb-input&quot; disabled type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Enter Mobile Number&quot;&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.input-with-error-msg">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Input With Error Msg</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<div class="sb-field">
+		<input class="sb-input sb-error">
+	</div>
+	<small class="text-error">Enter phone number</small>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;input class&#x3D;&quot;sb-input sb-error&quot;&gt;
+	&lt;/div&gt;
+	&lt;small class&#x3D;&quot;text-error&quot;&gt;Enter phone number&lt;/small&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.input-with-icon">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Input With Icon</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<label>Input with icon</label>
+	<div class="sb-field">
+		<input class="sb-input" type="text" placeholder="Enter Mobile Number">
+		<i class="search icon sb-input-icon"></i>
+	</div>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;label&gt;Input with icon&lt;/label&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;input class&#x3D;&quot;sb-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Enter Mobile Number&quot;&gt;
+		&lt;i class&#x3D;&quot;search icon sb-input-icon&quot;&gt;&lt;/i&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.input-with-required-field">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Input With Required Field</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<label>Required field</label>
+	<div class="sb-field">
+		<input class="sb-input required" required>
+	</div>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;label&gt;Required field&lt;/label&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;input class&#x3D;&quot;sb-input required&quot; required&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.input-with-success-message">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Input With Success Message</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<div class="sb-field">
+		<input class="sb-input sb-success">
+	</div>
+	<small class="text-success">Both password are matching</small>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;input class&#x3D;&quot;sb-input sb-success&quot;&gt;
+	&lt;/div&gt;
+	&lt;small class&#x3D;&quot;text-success&quot;&gt;Both password are matching&lt;/small&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.radiobutton">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Radiobutton</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="#" class="checker">
+	<p>
+		<input type="radio" id="test1" name="radio-group" disabled="disabled" checked>
+		<label for="test1">Radio Button label</label>
+	</p>
+	<p>
+		<input type="radio" id="test2" name="radio-group">
+		<label for="test2">Peach</label>
+	</p>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;#&quot; class&#x3D;&quot;checker&quot;&gt;
+	&lt;p&gt;
+		&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;test1&quot; name&#x3D;&quot;radio-group&quot; disabled&#x3D;&quot;disabled&quot; checked&gt;
+		&lt;label for&#x3D;&quot;test1&quot;&gt;Radio Button label&lt;/label&gt;
+	&lt;/p&gt;
+	&lt;p&gt;
+		&lt;input type&#x3D;&quot;radio&quot; id&#x3D;&quot;test2&quot; name&#x3D;&quot;radio-group&quot;&gt;
+		&lt;label for&#x3D;&quot;test2&quot;&gt;Peach&lt;/label&gt;
+	&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="forms.text-area">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Text Area</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<form action="" class="sb-form">
+	<label>textarea</label>
+	<div class="sb-field">
+		<textarea rows="4" class="sb-textarea" placeholder="Enter summary"></textarea>
+	</div>
+</form>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;form action&#x3D;&quot;&quot; class&#x3D;&quot;sb-form&quot;&gt;
+	&lt;label&gt;textarea&lt;/label&gt;
+	&lt;div class&#x3D;&quot;sb-field&quot;&gt;
+		&lt;textarea rows&#x3D;&quot;4&quot; class&#x3D;&quot;sb-textarea&quot; placeholder&#x3D;&quot;Enter summary&quot;&gt;&lt;/textarea&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+	
+		</div>
+
+</div>
+
+
+<div class="f-item-group" id="loader">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Loader</h2>
+	</div>
+		<div class="f-item-group" id="loader.loader">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Loader</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<div class="" style="position:relative;width:100%;height: 300px;">
+	<div class="sb-loader" style="position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 40px;
+    margin: 0 auto;
+    height: 40px;"></div>
+</div>
+
+<h6>Page Loader with Background</h6>
+<div class="" style="position:relative;width:100%;height: 300px;">
+
+	<div class="sb-loader dimmer" style="position: absolute;"></div>
+
+
+</div>
+
+<!--  -->
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;div class&#x3D;&quot;&quot; style&#x3D;&quot;position:relative;width:100%;height: 300px;&quot;&gt;
+	&lt;div class&#x3D;&quot;sb-loader&quot; style&#x3D;&quot;position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 40px;
+    margin: 0 auto;
+    height: 40px;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h6&gt;Page Loader with Background&lt;/h6&gt;
+&lt;div class&#x3D;&quot;&quot; style&#x3D;&quot;position:relative;width:100%;height: 300px;&quot;&gt;
+
+	&lt;div class&#x3D;&quot;sb-loader dimmer&quot; style&#x3D;&quot;position: absolute;&quot;&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+
+&lt;!--  --&gt;</code></pre>
+
+	
+		</div>
+
+</div>
+
+
+<div class="f-item-group" id="modal">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Modal</h2>
+	</div>
+		<div class="f-item-group" id="modal.large-modal">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Large Modal</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<!-- refer below code for angular-1 -->
+
+<div class="sb-modal">
+	<div class="ui large modal">
+		<div class="header sb-modal-header">
+			Modal Heading
+		</div>
+		<div class="scrolling image content sb-modal-content">
+			<div class="description">
+				<p>Modal Content</p>
+			</div>
+		</div>
+		<div class="actions sb-modal-actions">
+			<div class="sb-btn sb-btn-primary sb-btn-normal">Proceed
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- refer commented code for angular-5 and above -->
+
+
+<!-- 
+        <sui-modal [mustScroll]="true" [isClosable]="true" [transitionDuration]="0" [size]="'large'" class="sb-modal" appBodyScroll (dismissed)="redirect()" #modal>
+            <div class="sb-modal-header">
+                Modal Heading
+            </div>
+            <div class="sb-modal-content text-center">
+                Modal Content
+            </div>
+            <div class="sb-modal-actions">
+                <button class="sb-btn sb-btn-normal sb-btn-primary">
+                    Yes
+                </button>
+                <button class="sb-btn sb-btn-normal sb-btn-outline-primary">
+                    No
+                </button>
+            </div>
+        </sui-modal>
+         -->
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;!-- refer below code for angular-1 --&gt;
+
+&lt;div class&#x3D;&quot;sb-modal&quot;&gt;
+	&lt;div class&#x3D;&quot;ui large modal&quot;&gt;
+		&lt;div class&#x3D;&quot;header sb-modal-header&quot;&gt;
+			Modal Heading
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;scrolling image content sb-modal-content&quot;&gt;
+			&lt;div class&#x3D;&quot;description&quot;&gt;
+				&lt;p&gt;Modal Content&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;actions sb-modal-actions&quot;&gt;
+			&lt;div class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-normal&quot;&gt;Proceed
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- refer commented code for angular-5 and above --&gt;
+
+
+&lt;!-- 
+        &lt;sui-modal [mustScroll]&#x3D;&quot;true&quot; [isClosable]&#x3D;&quot;true&quot; [transitionDuration]&#x3D;&quot;0&quot; [size]&#x3D;&quot;&#x27;large&#x27;&quot; class&#x3D;&quot;sb-modal&quot; appBodyScroll (dismissed)&#x3D;&quot;redirect()&quot; #modal&gt;
+            &lt;div class&#x3D;&quot;sb-modal-header&quot;&gt;
+                Modal Heading
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;sb-modal-content text-center&quot;&gt;
+                Modal Content
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;sb-modal-actions&quot;&gt;
+                &lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-primary&quot;&gt;
+                    Yes
+                &lt;/button&gt;
+                &lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-outline-primary&quot;&gt;
+                    No
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/sui-modal&gt;
+         --&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="modal.normal-modal">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Normal Modal</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<!-- refer below code for angular-1 -->
+
+<div class="sb-modal">
+	<div class="ui normal modal">
+		<div class="header sb-modal-header">
+			Modal Heading
+		</div>
+		<div class="scrolling image content sb-modal-content">
+			<div class="description">
+				<p>Modal Content</p>
+			</div>
+		</div>
+		<div class="actions sb-modal-actions">
+			<div class="sb-btn sb-btn-primary sb-btn-normal">Proceed
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- refer commented code for angular-5 and above -->
+
+
+<!-- 
+    <sui-modal [mustScroll]="true" [isClosable]="true" [transitionDuration]="0" [size]="'normal'" class="sb-modal" appBodyScroll (dismissed)="redirect()" #modal>
+        <div class="sb-modal-header">
+            Modal Heading
+        </div>
+        <div class="sb-modal-content text-center">
+            Modal Content
+        </div>
+        <div class="sb-modal-actions">
+            <button class="sb-btn sb-btn-normal sb-btn-primary">
+                Yes
+            </button>
+            <button class="sb-btn sb-btn-normal sb-btn-outline-primary">
+                No
+            </button>
+        </div>
+    </sui-modal>
+     -->
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;!-- refer below code for angular-1 --&gt;
+
+&lt;div class&#x3D;&quot;sb-modal&quot;&gt;
+	&lt;div class&#x3D;&quot;ui normal modal&quot;&gt;
+		&lt;div class&#x3D;&quot;header sb-modal-header&quot;&gt;
+			Modal Heading
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;scrolling image content sb-modal-content&quot;&gt;
+			&lt;div class&#x3D;&quot;description&quot;&gt;
+				&lt;p&gt;Modal Content&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;actions sb-modal-actions&quot;&gt;
+			&lt;div class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-normal&quot;&gt;Proceed
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- refer commented code for angular-5 and above --&gt;
+
+
+&lt;!-- 
+    &lt;sui-modal [mustScroll]&#x3D;&quot;true&quot; [isClosable]&#x3D;&quot;true&quot; [transitionDuration]&#x3D;&quot;0&quot; [size]&#x3D;&quot;&#x27;normal&#x27;&quot; class&#x3D;&quot;sb-modal&quot; appBodyScroll (dismissed)&#x3D;&quot;redirect()&quot; #modal&gt;
+        &lt;div class&#x3D;&quot;sb-modal-header&quot;&gt;
+            Modal Heading
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;sb-modal-content text-center&quot;&gt;
+            Modal Content
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;sb-modal-actions&quot;&gt;
+            &lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-primary&quot;&gt;
+                Yes
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-outline-primary&quot;&gt;
+                No
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/sui-modal&gt;
+     --&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="modal.small-modal">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Small Modal</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<!-- refer below code for angular-1 -->
+<div class="sb-modal">
+	<div class="ui small modal">
+		<div class="header sb-modal-header">
+			Modal Heading
+		</div>
+		<div class="scrolling image content sb-modal-content">
+			<div class="description">
+				<p>Modal Content</p>
+			</div>
+		</div>
+		<div class="actions sb-modal-actions">
+			<div class="sb-btn sb-btn-primary sb-btn-normal">Proceed
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- refer commented code for angular-5 and above -->
+
+
+<!-- 
+<sui-modal [mustScroll]="true" [isClosable]="true" [transitionDuration]="0" [size]="'small'" class="sb-modal" appBodyScroll (dismissed)="redirect()" #modal>
+    <div class="sb-modal-header">
+        Modal Heading
+    </div>
+    <div class="sb-modal-content text-center">
+        Modal Content
+    </div>
+    <div class="sb-modal-actions">
+        <button class="sb-btn sb-btn-normal sb-btn-primary">
+            Yes
+        </button>
+        <button class="sb-btn sb-btn-normal sb-btn-outline-primary">
+            No
+        </button>
+    </div>
+</sui-modal>
+ -->
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;!-- refer below code for angular-1 --&gt;
+&lt;div class&#x3D;&quot;sb-modal&quot;&gt;
+	&lt;div class&#x3D;&quot;ui small modal&quot;&gt;
+		&lt;div class&#x3D;&quot;header sb-modal-header&quot;&gt;
+			Modal Heading
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;scrolling image content sb-modal-content&quot;&gt;
+			&lt;div class&#x3D;&quot;description&quot;&gt;
+				&lt;p&gt;Modal Content&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;actions sb-modal-actions&quot;&gt;
+			&lt;div class&#x3D;&quot;sb-btn sb-btn-primary sb-btn-normal&quot;&gt;Proceed
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- refer commented code for angular-5 and above --&gt;
+
+
+&lt;!-- 
+&lt;sui-modal [mustScroll]&#x3D;&quot;true&quot; [isClosable]&#x3D;&quot;true&quot; [transitionDuration]&#x3D;&quot;0&quot; [size]&#x3D;&quot;&#x27;small&#x27;&quot; class&#x3D;&quot;sb-modal&quot; appBodyScroll (dismissed)&#x3D;&quot;redirect()&quot; #modal&gt;
+    &lt;div class&#x3D;&quot;sb-modal-header&quot;&gt;
+        Modal Heading
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;sb-modal-content text-center&quot;&gt;
+        Modal Content
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;sb-modal-actions&quot;&gt;
+        &lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-primary&quot;&gt;
+            Yes
+        &lt;/button&gt;
+        &lt;button class&#x3D;&quot;sb-btn sb-btn-normal sb-btn-outline-primary&quot;&gt;
+            No
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/sui-modal&gt;
+ --&gt;</code></pre>
+
+	
+		</div>
+
+</div>
+
+
+<div class="f-item-group" id="search">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Search</h2>
+	</div>
+		<div class="f-item-group" id="search.search">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Search</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<h6>Searchbox - Large</h6>
+<div class="sb-search-box large">
+	<div class="input-div relative">
+		<i class="search icon"></i>
+		<input class="sb-search-input" type="text" placeholder="Search..." />
+		<i class="close icon"></i>
+		<div class="sb-loader"></div>
+	</div>
+	<button class="sb-btn sb-btn-normal">Search</button>
+</div>
+
+
+<h6>Searchbox - Medium</h6>
+<div class="sb-search-box medium">
+	<div class="input-div relative">
+		<i class="search icon"></i>
+		<input class="sb-search-input" type="text" placeholder="Search..." />
+		<i class="close icon"></i>
+		<div class="sb-loader"></div>
+	</div>
+	<button class="sb-btn sb-btn-normal">Search</button>
+</div>
+
+<h6>Searchbox - Small</h6>
+<div class="sb-search-box small">
+	<div class="input-div relative">
+		<i class="search icon"></i>
+		<input class="sb-search-input" type="text" placeholder="Search..." />
+		<i class="close icon"></i>
+		<div class="sb-loader"></div>
+	</div>
+	<button class="sb-btn sb-btn-normal">Search</button>
+</div>
+
+
+
+<h6>Searchbox - No Button</h6>
+<div class="sb-search-box small no-btn">
+	<div class="input-div relative">
+		<i class="search icon"></i>
+		<input class="sb-search-input" type="text" placeholder="Search..." />
+		<i class="close icon"></i>
+		<div class="sb-loader"></div>
+	</div>
+	<button class="sb-btn sb-btn-normal">Search</button>
+</div>
+
+
+<h6>Searchbox - Disabled</h6>
+<div class="sb-search-box large disabled">
+	<div class="input-div relative">
+		<i class="search icon"></i>
+		<input class="sb-search-input" type="text" placeholder="Search..." />
+		<i class="close icon"></i>
+	</div>
+	<button class="sb-btn sb-btn-normal">Search</button>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;h6&gt;Searchbox - Large&lt;/h6&gt;
+&lt;div class&#x3D;&quot;sb-search-box large&quot;&gt;
+	&lt;div class&#x3D;&quot;input-div relative&quot;&gt;
+		&lt;i class&#x3D;&quot;search icon&quot;&gt;&lt;/i&gt;
+		&lt;input class&#x3D;&quot;sb-search-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search...&quot; /&gt;
+		&lt;i class&#x3D;&quot;close icon&quot;&gt;&lt;/i&gt;
+		&lt;div class&#x3D;&quot;sb-loader&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;button class&#x3D;&quot;sb-btn sb-btn-normal&quot;&gt;Search&lt;/button&gt;
+&lt;/div&gt;
+
+
+&lt;h6&gt;Searchbox - Medium&lt;/h6&gt;
+&lt;div class&#x3D;&quot;sb-search-box medium&quot;&gt;
+	&lt;div class&#x3D;&quot;input-div relative&quot;&gt;
+		&lt;i class&#x3D;&quot;search icon&quot;&gt;&lt;/i&gt;
+		&lt;input class&#x3D;&quot;sb-search-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search...&quot; /&gt;
+		&lt;i class&#x3D;&quot;close icon&quot;&gt;&lt;/i&gt;
+		&lt;div class&#x3D;&quot;sb-loader&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;button class&#x3D;&quot;sb-btn sb-btn-normal&quot;&gt;Search&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;h6&gt;Searchbox - Small&lt;/h6&gt;
+&lt;div class&#x3D;&quot;sb-search-box small&quot;&gt;
+	&lt;div class&#x3D;&quot;input-div relative&quot;&gt;
+		&lt;i class&#x3D;&quot;search icon&quot;&gt;&lt;/i&gt;
+		&lt;input class&#x3D;&quot;sb-search-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search...&quot; /&gt;
+		&lt;i class&#x3D;&quot;close icon&quot;&gt;&lt;/i&gt;
+		&lt;div class&#x3D;&quot;sb-loader&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;button class&#x3D;&quot;sb-btn sb-btn-normal&quot;&gt;Search&lt;/button&gt;
+&lt;/div&gt;
+
+
+
+&lt;h6&gt;Searchbox - No Button&lt;/h6&gt;
+&lt;div class&#x3D;&quot;sb-search-box small no-btn&quot;&gt;
+	&lt;div class&#x3D;&quot;input-div relative&quot;&gt;
+		&lt;i class&#x3D;&quot;search icon&quot;&gt;&lt;/i&gt;
+		&lt;input class&#x3D;&quot;sb-search-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search...&quot; /&gt;
+		&lt;i class&#x3D;&quot;close icon&quot;&gt;&lt;/i&gt;
+		&lt;div class&#x3D;&quot;sb-loader&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;button class&#x3D;&quot;sb-btn sb-btn-normal&quot;&gt;Search&lt;/button&gt;
+&lt;/div&gt;
+
+
+&lt;h6&gt;Searchbox - Disabled&lt;/h6&gt;
+&lt;div class&#x3D;&quot;sb-search-box large disabled&quot;&gt;
+	&lt;div class&#x3D;&quot;input-div relative&quot;&gt;
+		&lt;i class&#x3D;&quot;search icon&quot;&gt;&lt;/i&gt;
+		&lt;input class&#x3D;&quot;sb-search-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search...&quot; /&gt;
+		&lt;i class&#x3D;&quot;close icon&quot;&gt;&lt;/i&gt;
+	&lt;/div&gt;
+	&lt;button class&#x3D;&quot;sb-btn sb-btn-normal&quot;&gt;Search&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+	
+		</div>
+
+</div>
+
+
+<div class="f-item-group" id="tables">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Tables</h2>
+	</div>
+		<div class="f-item-group" id="tables.table-download">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Table Download</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<div class="sb-dtable-container">
+	<div class="sb-dtable-search-header search-header-withbg">
+
+		<div class="sb-search-box small no-btn">
+			<div class="input-div relative">
+				<i class="search icon"></i>
+				<input class="sb-search-input" type="text" placeholder="Search..." />
+				<i class="close icon"></i>
+				<div class="sb-loader"></div>
+			</div>
+			<button class="sb-btn sb-btn-normal">Search</button>
+		</div>
+
+
+		<div class="download-file"><i class="download icon"></i>Download File</div>
+	</div>
+	<table class="ui selectable fixed single-line table no-br-radius sb-dtable">
+		<thead class="sb-dtable-header">
+			<tr>
+				<th class="sb-sort-icon">Name</th>
+				<th class="sb-sort-icon">Age</th>
+				<th class="sb-sort-icon">Job</th>
+			</tr>
+		</thead>
+		<tbody class="sb-dtable-body">
+			<tr>
+				<td data-label="Name">James</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Engineer</td>
+			</tr>
+			<tr class="sb-activated-row">
+				<td data-label="Name">Jill</td>
+				<td data-label="Age">26</td>
+				<td data-label="Job">Engineer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">Elyse</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">Elyse</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">Elyse</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">Elyse</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">Elyse</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">Elyse</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;div class&#x3D;&quot;sb-dtable-container&quot;&gt;
+	&lt;div class&#x3D;&quot;sb-dtable-search-header search-header-withbg&quot;&gt;
+
+		&lt;div class&#x3D;&quot;sb-search-box small no-btn&quot;&gt;
+			&lt;div class&#x3D;&quot;input-div relative&quot;&gt;
+				&lt;i class&#x3D;&quot;search icon&quot;&gt;&lt;/i&gt;
+				&lt;input class&#x3D;&quot;sb-search-input&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search...&quot; /&gt;
+				&lt;i class&#x3D;&quot;close icon&quot;&gt;&lt;/i&gt;
+				&lt;div class&#x3D;&quot;sb-loader&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;button class&#x3D;&quot;sb-btn sb-btn-normal&quot;&gt;Search&lt;/button&gt;
+		&lt;/div&gt;
+
+
+		&lt;div class&#x3D;&quot;download-file&quot;&gt;&lt;i class&#x3D;&quot;download icon&quot;&gt;&lt;/i&gt;Download File&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;table class&#x3D;&quot;ui selectable fixed single-line table no-br-radius sb-dtable&quot;&gt;
+		&lt;thead class&#x3D;&quot;sb-dtable-header&quot;&gt;
+			&lt;tr&gt;
+				&lt;th class&#x3D;&quot;sb-sort-icon&quot;&gt;Name&lt;/th&gt;
+				&lt;th class&#x3D;&quot;sb-sort-icon&quot;&gt;Age&lt;/th&gt;
+				&lt;th class&#x3D;&quot;sb-sort-icon&quot;&gt;Job&lt;/th&gt;
+			&lt;/tr&gt;
+		&lt;/thead&gt;
+		&lt;tbody class&#x3D;&quot;sb-dtable-body&quot;&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;James&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Engineer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr class&#x3D;&quot;sb-activated-row&quot;&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;Jill&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;26&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Engineer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;Elyse&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;Elyse&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;Elyse&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;Elyse&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;Elyse&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;Elyse&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+	
+		</div>
+		<div class="f-item-group" id="tables.tables">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Tables</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<div class="sb-dtable-container">
+	<table class="sb-dtable ui selectable striped fixed single-line table">
+		<thead class="sb-dtable-header pd-y-x">
+			<tr>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Job</th>
+			</tr>
+		</thead>
+		<tbody class="sb-dtable-body body-large">
+			<tr>
+				<td data-label="Name">
+					<div class="sb-media">
+						<img src="" alt="" class="sb-media-object">
+						<div class="sb-media-body">
+							<h6 class="media-heading">United Course</h6>
+							<p class="media-description">Course</p>
+						</div>
+					</div>
+				</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Engineer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">
+					<div class="sb-media">
+						<img src="" alt="" class="sb-media-object">
+						<div class="sb-media-body">
+							<h6 class="media-heading">United Course</h6>
+							<p class="media-description">Course</p>
+						</div>
+					</div>
+				</td>
+				<td data-label="Age">26</td>
+				<td data-label="Job">Engineer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">
+					<div class="sb-media">
+						<img src="" alt="" class="sb-media-object">
+						<div class="sb-media-body">
+							<h6 class="media-heading">United Course</h6>
+							<p class="media-description">Course</p>
+						</div>
+					</div>
+				</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">
+					<div class="sb-media">
+						<img src="" alt="" class="sb-media-object">
+						<div class="sb-media-body">
+							<h6 class="media-heading">United Course</h6>
+							<p class="media-description">Course</p>
+						</div>
+					</div>
+				</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">
+					<div class="sb-media">
+						<img src="" alt="" class="sb-media-object">
+						<div class="sb-media-body">
+							<h6 class="media-heading">United Course</h6>
+							<p class="media-description">Course</p>
+						</div>
+					</div>
+				</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">
+					<div class="sb-media">
+						<img src="" alt="" class="sb-media-object">
+						<div class="sb-media-body">
+							<h6 class="media-heading">United Course</h6>
+							<p class="media-description">Course</p>
+						</div>
+					</div>
+				</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">
+					<div class="sb-media">
+						<img src="" alt="" class="sb-media-object">
+						<div class="sb-media-body">
+							<h6 class="media-heading">United Course</h6>
+							<p class="media-description">Course</p>
+						</div>
+					</div>
+				</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">
+					<div class="sb-media">
+						<img src="" alt="" class="sb-media-object">
+						<div class="sb-media-body">
+							<h6 class="media-heading">United Course</h6>
+							<p class="media-description">Course</p>
+						</div>
+					</div>
+				</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">
+					<div class="sb-media">
+						<img src="" alt="" class="sb-media-object">
+						<div class="sb-media-body">
+							<h6 class="media-heading">United Course</h6>
+							<p class="media-description">Course</p>
+						</div>
+					</div>
+				</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+			<tr>
+				<td data-label="Name">
+					<div class="sb-media">
+						<img src="" alt="" class="sb-media-object">
+						<div class="sb-media-body">
+							<h6 class="media-heading">United Course</h6>
+							<p class="media-description">Course</p>
+						</div>
+					</div>
+				</td>
+				<td data-label="Age">24</td>
+				<td data-label="Job">Designer</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;div class&#x3D;&quot;sb-dtable-container&quot;&gt;
+	&lt;table class&#x3D;&quot;sb-dtable ui selectable striped fixed single-line table&quot;&gt;
+		&lt;thead class&#x3D;&quot;sb-dtable-header pd-y-x&quot;&gt;
+			&lt;tr&gt;
+				&lt;th&gt;Name&lt;/th&gt;
+				&lt;th&gt;Age&lt;/th&gt;
+				&lt;th&gt;Job&lt;/th&gt;
+			&lt;/tr&gt;
+		&lt;/thead&gt;
+		&lt;tbody class&#x3D;&quot;sb-dtable-body body-large&quot;&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;
+					&lt;div class&#x3D;&quot;sb-media&quot;&gt;
+						&lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot; class&#x3D;&quot;sb-media-object&quot;&gt;
+						&lt;div class&#x3D;&quot;sb-media-body&quot;&gt;
+							&lt;h6 class&#x3D;&quot;media-heading&quot;&gt;United Course&lt;/h6&gt;
+							&lt;p class&#x3D;&quot;media-description&quot;&gt;Course&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Engineer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;
+					&lt;div class&#x3D;&quot;sb-media&quot;&gt;
+						&lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot; class&#x3D;&quot;sb-media-object&quot;&gt;
+						&lt;div class&#x3D;&quot;sb-media-body&quot;&gt;
+							&lt;h6 class&#x3D;&quot;media-heading&quot;&gt;United Course&lt;/h6&gt;
+							&lt;p class&#x3D;&quot;media-description&quot;&gt;Course&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;26&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Engineer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;
+					&lt;div class&#x3D;&quot;sb-media&quot;&gt;
+						&lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot; class&#x3D;&quot;sb-media-object&quot;&gt;
+						&lt;div class&#x3D;&quot;sb-media-body&quot;&gt;
+							&lt;h6 class&#x3D;&quot;media-heading&quot;&gt;United Course&lt;/h6&gt;
+							&lt;p class&#x3D;&quot;media-description&quot;&gt;Course&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;
+					&lt;div class&#x3D;&quot;sb-media&quot;&gt;
+						&lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot; class&#x3D;&quot;sb-media-object&quot;&gt;
+						&lt;div class&#x3D;&quot;sb-media-body&quot;&gt;
+							&lt;h6 class&#x3D;&quot;media-heading&quot;&gt;United Course&lt;/h6&gt;
+							&lt;p class&#x3D;&quot;media-description&quot;&gt;Course&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;
+					&lt;div class&#x3D;&quot;sb-media&quot;&gt;
+						&lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot; class&#x3D;&quot;sb-media-object&quot;&gt;
+						&lt;div class&#x3D;&quot;sb-media-body&quot;&gt;
+							&lt;h6 class&#x3D;&quot;media-heading&quot;&gt;United Course&lt;/h6&gt;
+							&lt;p class&#x3D;&quot;media-description&quot;&gt;Course&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;
+					&lt;div class&#x3D;&quot;sb-media&quot;&gt;
+						&lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot; class&#x3D;&quot;sb-media-object&quot;&gt;
+						&lt;div class&#x3D;&quot;sb-media-body&quot;&gt;
+							&lt;h6 class&#x3D;&quot;media-heading&quot;&gt;United Course&lt;/h6&gt;
+							&lt;p class&#x3D;&quot;media-description&quot;&gt;Course&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;
+					&lt;div class&#x3D;&quot;sb-media&quot;&gt;
+						&lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot; class&#x3D;&quot;sb-media-object&quot;&gt;
+						&lt;div class&#x3D;&quot;sb-media-body&quot;&gt;
+							&lt;h6 class&#x3D;&quot;media-heading&quot;&gt;United Course&lt;/h6&gt;
+							&lt;p class&#x3D;&quot;media-description&quot;&gt;Course&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;
+					&lt;div class&#x3D;&quot;sb-media&quot;&gt;
+						&lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot; class&#x3D;&quot;sb-media-object&quot;&gt;
+						&lt;div class&#x3D;&quot;sb-media-body&quot;&gt;
+							&lt;h6 class&#x3D;&quot;media-heading&quot;&gt;United Course&lt;/h6&gt;
+							&lt;p class&#x3D;&quot;media-description&quot;&gt;Course&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;
+					&lt;div class&#x3D;&quot;sb-media&quot;&gt;
+						&lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot; class&#x3D;&quot;sb-media-object&quot;&gt;
+						&lt;div class&#x3D;&quot;sb-media-body&quot;&gt;
+							&lt;h6 class&#x3D;&quot;media-heading&quot;&gt;United Course&lt;/h6&gt;
+							&lt;p class&#x3D;&quot;media-description&quot;&gt;Course&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td data-label&#x3D;&quot;Name&quot;&gt;
+					&lt;div class&#x3D;&quot;sb-media&quot;&gt;
+						&lt;img src&#x3D;&quot;&quot; alt&#x3D;&quot;&quot; class&#x3D;&quot;sb-media-object&quot;&gt;
+						&lt;div class&#x3D;&quot;sb-media-body&quot;&gt;
+							&lt;h6 class&#x3D;&quot;media-heading&quot;&gt;United Course&lt;/h6&gt;
+							&lt;p class&#x3D;&quot;media-description&quot;&gt;Course&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Age&quot;&gt;24&lt;/td&gt;
+				&lt;td data-label&#x3D;&quot;Job&quot;&gt;Designer&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+	
+		</div>
+
+</div>
+
+
+<div class="f-item-group" id="tabs">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Tabs</h2>
+	</div>
+		<div class="f-item-group" id="tabs.tab">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Tab</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<div class="sb-secondary-pointing-menu ">
+	<a class="item" suiTabHeader="1">First</a>
+	<a class="item" suiTabHeader="2">Second</a>
+	<a class="item" suiTabHeader="3">Third</a>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;div class&#x3D;&quot;sb-secondary-pointing-menu &quot;&gt;
+	&lt;a class&#x3D;&quot;item&quot; suiTabHeader&#x3D;&quot;1&quot;&gt;First&lt;/a&gt;
+	&lt;a class&#x3D;&quot;item&quot; suiTabHeader&#x3D;&quot;2&quot;&gt;Second&lt;/a&gt;
+	&lt;a class&#x3D;&quot;item&quot; suiTabHeader&#x3D;&quot;3&quot;&gt;Third&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+	
+		</div>
+
+</div>
+
+
+<div class="f-item-group" id="toggle">
+
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Toggle</h2>
+	</div>
+		<div class="f-item-group" id="toggle.toggle">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Toggle</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function (event) {
+	codecopy('pre') // your code tag selector!
+	})
+</script>
+
+
+
+<div class="f-item-preview">
+	<!-- <div class="field">
+        <div class="sb-toggle">
+<input type="checkbox" checked="">
+<label>
+Toggle checkbox
+</label>
+        </div> -->
+
+
+<h1>WIP</h1>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup" id="myInput">&lt;!-- &lt;div class&#x3D;&quot;field&quot;&gt;
+        &lt;div class&#x3D;&quot;sb-toggle&quot;&gt;
+&lt;input type&#x3D;&quot;checkbox&quot; checked&#x3D;&quot;&quot;&gt;
+&lt;label&gt;
+Toggle checkbox
+&lt;/label&gt;
+        &lt;/div&gt; --&gt;
+
+
+&lt;h1&gt;WIP&lt;/h1&gt;</code></pre>
+
+	
+		</div>
+
+</div>
+
+
+
+
+		</div>
+	<script src="assets/fabricator/scripts/f.js"></script>
+	<script src="assets/default/scripts/c/codecopy.min.js"></script>
+	<!-- toolkit scripts -->
+	<script src="assets/toolkit/scripts/toolkit.js"></script>
+	<!-- /toolkit scripts -->
+	<!-- toolkit scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/ng2-semantic-ui@0.9.7/bundles/ng2-semantic-ui.umd.min.js"></script>
+	<!-- /toolkit scripts -->
+
+</body>
+</html>
