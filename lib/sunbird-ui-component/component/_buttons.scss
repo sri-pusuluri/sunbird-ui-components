@@ -37,7 +37,40 @@ input[type="button"] {
     &+.sb-btn {
         margin:0 $base-block-space 0 0;
     }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, .5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
+      }
+      
+      @keyframes ripple {
+        0% {
+          transform: scale(0, 0);
+          opacity: 1;
+        }
+        20% {
+          transform: scale(25, 25);
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: scale(40, 40);
+        }
+      }
+      &:focus:not(:active)::after {
+        animation: ripple 1s ease-out;
+      }
+      
 }
+  
 // button link
 .sb-btn-link {
     background:none;
@@ -158,68 +191,19 @@ input[type="button"] {
   }
 
 
-
-  .loading-spinner { 
-    width: 1rem;
-    height: 1rem;
-    margin-right:5px;
-    border-width: .2em;
-    display: inline-block;
-    vertical-align: text-bottom;
-    border: .15em solid currentColor;
-    border-right-color: transparent;
-    border-radius: 50%;
-    -webkit-animation: spinner-border .75s linear infinite;
-    animation: spinner-border .75s linear infinite;
-
-  }
-  
-  .sb-btn-loading:before {
-      position: absolute;
-      content: '';
-      top: 50%;
-      left: 50%;
-      margin: -.64285714em 0 0 -.64285714em;
-      width: 1.28571429em;
-      height: 1.28571429em;
-      border-radius: 500rem;
-      border: .2em solid rgba(0,0,0,.15);
-  }
-  
-  .sb-btn-loading:after {
-      position: absolute;
-      content: '';
-      top: 50%;
-      left: 50%;
-      margin: -.64285714em 0 0 -.64285714em;
-      width: 1.28571429em;
-      height: 1.28571429em;
-      -webkit-animation: button-spin .6s linear;
-      animation: button-spin .6s linear;
-      -webkit-animation-iteration-count: infinite;
-      animation-iteration-count: infinite;
-      border-radius: 500rem;
-      border-color: #fff transparent transparent;
-      border-style: solid;
-      border-width: .2em;
-      -webkit-box-shadow: 0 0 0 1px transparent;
-      box-shadow: 0 0 0 1px transparent;
-  }
-
-
 // Buttons with icon
 
 .sb-right-icon-btn {
     padding: ($base-block-space * 1)  ($base-block-space * 1)  ($base-block-space * 1)  ($base-block-space * 2);
     i.icon{
-        margin-left:$base-block-space;
-        margin-right:0;
+        margin-left: $base-block-space;
+        margin-right: 0;
     }
 }
 .sb-left-icon-btn {
     padding: ($base-block-space * 1)  ($base-block-space * 2)  ($base-block-space * 1)  ($base-block-space * 1);
     i.icon{
-        margin-right:$base-block-space;
+        margin-right: $base-block-space;
     }
 }
 
@@ -238,7 +222,7 @@ input[type="button"] {
     font-size: 1rem;
     min-width: ($base-block-space * 2);
     input {
-        width: 3.5rem;
+        width: ($base-block-space * 7);;
         height: ($base-block-space * 3);
         cursor: pointer;
         position: absolute;
@@ -302,7 +286,7 @@ input[type="button"] {
 // button groups
 
 .btn-group {
-    border: 1px solid rgba(34,36,38,.15);
+    border: $sb-btn-group-border-width solid $sb-btn-group-border-color;
     display: inline-flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -310,26 +294,23 @@ input[type="button"] {
     flex-direction: row;
     font-size: 0;
     vertical-align: baseline;
-    margin: 0 .25em 0 0;
     .sb-btn {
-        background: #F2F2F2;
-        border-left: 1px solid rgba(34,36,38,.15);
+        background: $sb-btn-group-btn-background;
+        border-left: $sb-btn-group-border-width solid $sb-btn-group-border-color;
         flex: 1 0 auto;
         margin: 0;
         border-radius: 0;
         margin: 0;
         border:0;
-        color: rgba(0,0,0,.95);
+        color: $sb-btn-group-btn-color;
         min-width: ($base-block-space * 5);
         &:first-child {
             border-left: none;
             margin-left: 0;
-            border-top-left-radius: .28571429rem;
-            border-bottom-left-radius: .28571429rem;
         }
         &:active, &.active {
-            background-color: $white-color;
-            color: #024F9D;
+            background-color: $sb-btn-group-btn-active-background-color;
+            color: $sb-btn-group-btn-color;
         }
         .icon {
             margin: 0;
@@ -344,10 +325,10 @@ input[type="button"] {
 //dashed buttons
 
 .sb-btn-dashed {
-  border: 0.5px solid $primary-color;
+  border: $sb-btn-dashed-border;
   border-style: dashed;
-  background-color: $white-color;
-  color: $primary-color;
+  background-color: $sb-btn-dashed-background-color;
+  color: $sb-btn-dashed-color;
 }
 
 // disabled button
