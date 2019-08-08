@@ -13,7 +13,7 @@ export class GettingStartedPage {
   codeRoot = Snippet({
     lang: 'typescript',
     code: `
-      import {NgbModule} from '@Sunbird-Ed/sunbird-ui-components';
+      import {SbModule} from '@Sunbird-Ed/sunbird-ui-components';
 
       @NgModule({
         ...
