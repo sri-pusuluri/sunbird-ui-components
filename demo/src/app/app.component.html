@@ -1,0 +1,44 @@
+<header class="navbar navbar-expand navbar-dark px-4 flex-column flex-md-row">
+
+  <a class="navbar-brand mr-md-2 mr-0" routerLink="/" aria-label="Sunbird UI Components" (click)="navbarCollapsed = true">
+    <img src="img/sunbird-logo.png" >
+    <span class="ml-2 d-xl-none d-lg-none d-md-none d-inline">Sunbird UI Components</span>
+  </a>
+
+  <div class="ml-auto navbar-nav-scroll">
+    <ul class="navbar-nav flex-row">
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/home']" (click)="navbarCollapsed = true">Home</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/getting-started']" (click)="navbarCollapsed = true">Getting Started</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/components']" (click)="navbarCollapsed = true">Components</a>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="social-buttons navbar-nav flex-row d-none d-md-flex align-items-center">
+    <a
+      href="https://github.com/Sunbird-Ed/sunbird-ui-components"
+      rel="nofollow noopener noreferrer" target="_blank"
+      title="Open Sunbird-Ed/sunbird-ui-components on GitHub"
+    ><svg:svg aria-hidden="true" ngbdIcon="github"></svg:svg></a>
+  </ul>
+
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed" [attr.aria-expanded]="!navbarCollapsed"
+    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</header>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer bg-light">
+  <div class="container-fluid p-3 p-md-5">
+  </div>
+</footer>
