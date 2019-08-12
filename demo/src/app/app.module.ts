@@ -4,6 +4,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent} from './app.component';
 import {routing} from './app.routing';
+import {SbCardModule} from './components/card/card.module';
 import {NgbdAccordionModule} from './components/accordion/accordion.module';
 import {NgbdAlertModule} from './components/alert/alert.module';
 import {NgbdButtonsModule} from './components/buttons/buttons.module';
@@ -29,6 +30,7 @@ import {NgbdSharedModule} from './shared';
 
 
 const DEMOS = [
+  SbCardModule,
   NgbdAccordionModule,
   NgbdAlertModule,
   NgbdButtonsModule,
