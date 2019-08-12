@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {SbModule} from '@sunbird-ed/sunbird-ui-components';
 
 import {AppComponent} from './app.component';
 import {routing} from './app.routing';
@@ -58,7 +59,7 @@ const PAGES = [
 
 @NgModule({
   declarations: [AppComponent, DefaultComponent, ...PAGES],
-  imports: [BrowserModule, routing, NgbModule, NgbdSharedModule, ...DEMOS],
+  imports: [BrowserModule, routing, SbModule, NgbModule, NgbdSharedModule, ...DEMOS],
   bootstrap: [AppComponent]
 })
-export class NgbdModule {}
+export class SbModule {}

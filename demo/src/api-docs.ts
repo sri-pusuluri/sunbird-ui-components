@@ -466,6 +466,54 @@ const API_DOCS = {
     ],
     "methods": []
   },
+  "SbCardConfig": {
+    "fileName": "src/card/card-config.ts",
+    "className": "SbCardConfig",
+    "description": "<p>A configuration service for the <a href=\"#/components/alert/api#SbCard\">SbCard</a> component.</p>\n<p>You can inject this service, typically in your root component, and customize its properties\nto provide default values for all alerts used in the application.</p>",
+    "type": "Service",
+    "methods": [],
+    "properties": [
+      {
+        "name": "dismissible",
+        "defaultValue": "true",
+        "type": "boolean",
+        "description": ""
+      },
+      {
+        "name": "type",
+        "defaultValue": "warning",
+        "type": "string",
+        "description": ""
+      }
+    ]
+  },
+  "SbCard": {
+    "fileName": "src/card/card.ts",
+    "className": "SbCard",
+    "description": "<p>Alert is a component to provide contextual feedback messages for user.</p>\n<p>It supports several alert types and can be dismissed.</p>",
+    "type": "Component",
+    "selector": "sb-card",
+    "inputs": [
+      {
+        "name": "dismissible",
+        "type": "boolean",
+        "description": "<p>If <code>true</code>, alert can be dismissed by the user.</p>\n<p>The close button (×) will be displayed and you can be notified\nof the event with the <code>(close)</code> output.</p>"
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "description": "<p>Type of the alert.</p>\n<p>Bootstrap provides styles for the following types: <code>&#39;success&#39;</code>, <code>&#39;info&#39;</code>, <code>&#39;warning&#39;</code>, <code>&#39;danger&#39;</code>, <code>&#39;primary&#39;</code>,\n<code>&#39;secondary&#39;</code>, <code>&#39;light&#39;</code> and <code>&#39;dark&#39;</code>.</p>"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "close",
+        "description": "<p>An event emitted when the close button is clicked. It has no payload and only relevant for dismissible alerts.</p>"
+      }
+    ],
+    "properties": [],
+    "methods": []
+  },
   "NgbCarouselConfig": {
     "fileName": "src/carousel/carousel-config.ts",
     "className": "NgbCarouselConfig",

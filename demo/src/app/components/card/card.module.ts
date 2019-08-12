@@ -5,12 +5,14 @@ import { ComponentWrapper } from '../../shared/component-wrapper/component-wrapp
 import { NgbdComponentsSharedModule, NgbdDemoList } from '../shared';
 import { NgbdApiPage } from '../shared/api-page/api.component';
 import { NgbdExamplesPage } from '../shared/examples-page/examples.component';
+
 import { SbCardBasic } from './demos/basic/card-basic';
 import { SbCardConfig } from './demos/config/card-config';
 import { SbCardConfigModule } from './demos/config/card-config.module';
+
 const DEMOS = {
   basic: {
-    title: 'Basic Alert',
+    title: 'Basic Card',
     type: SbCardBasic,
     files: [
       {
@@ -24,7 +26,7 @@ const DEMOS = {
     ]
   },
   config: {
-    title: 'Global configuration of alerts',
+    title: 'Global configuration of cards',
     type: SbCardConfig,
     files: [
       {
