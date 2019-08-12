@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {SbCardConfig} from '@sunbird-ed/sunbird-ui-components';
+import {SbCardConfig} from 'sunbird-ui-component';
 
 @Component({
   selector: 'sb-card-config',

@@ -8826,6 +8826,11 @@ stylus@0.54.5, stylus@^0.54.5:
     sax "0.5.x"
     source-map "0.1.x"
 
+sunbird-ui-component@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/sunbird-ui-component/-/sunbird-ui-component-1.1.0.tgz#152096e267143bb134bbcdf4b2cfc2481eba6c61"
+  integrity sha512-Bg1A//lFfy81EAU9jQRmgkRdBY6EeyufdR226eYw+ZG1WBxhudSagsP+OflG8OUOhLWlkrFdN/xEt5IZ2Ufk4g==
+
 supports-color@6.1.0, supports-color@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-6.1.0.tgz#0764abc69c63d5ac842dd4867e8d025e880df8f3"
