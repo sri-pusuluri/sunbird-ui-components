@@ -62,4 +62,4 @@ const PAGES = [
   imports: [BrowserModule, routing, SbModule, NgbModule, NgbdSharedModule, ...DEMOS],
   bootstrap: [AppComponent]
 })
-export class SbModule {}
+export class SbdModule {}
