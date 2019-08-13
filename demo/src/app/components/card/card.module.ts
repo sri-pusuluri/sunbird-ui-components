@@ -6,14 +6,15 @@ import { NgbdComponentsSharedModule, NgbdDemoList } from '../shared';
 import { NgbdApiPage } from '../shared/api-page/api.component';
 import { NgbdExamplesPage } from '../shared/examples-page/examples.component';
 
-import { SbCardBasic } from './demos/basic/card-basic';
-import { SbCardConfig } from './demos/config/card-config';
-import { SbCardConfigModule } from './demos/config/card-config.module';
+import { SbdCardBasic } from './demos/basic/card-basic';
+import { SbdCardBasicModule } from './demos/basic/card-basic.module';
+import { SbdCardConfig } from './demos/config/card-config';
+import { SbdCardConfigModule } from './demos/config/card-config.module';
 
 const DEMOS = {
   basic: {
     title: 'Basic Card',
-    type: SbCardBasic,
+    type: SbdCardBasic,
     files: [
       {
         name: 'card-basic.html',
@@ -27,7 +28,7 @@ const DEMOS = {
   },
   config: {
     title: 'Global configuration of cards',
-    type: SbCardConfig,
+    type: SbdCardConfig,
     files: [
       {
         name: 'card-config.html',
@@ -57,12 +58,12 @@ export const ROUTES = [
   imports: [
     NgbdSharedModule,
     NgbdComponentsSharedModule,
-    SbCardBasicModule,
-    SbCardConfigModule
+    SbdCardBasicModule,
+    SbdCardConfigModule
   ]
 })
 export class SbCardModule {
   constructor(demoList: NgbdDemoList) {
-    demoList.register('alert', DEMOS);
+    demoList.register('card', DEMOS);
   }
 }

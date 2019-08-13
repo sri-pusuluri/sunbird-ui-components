@@ -5,10 +5,10 @@ import {SbCardConfig} from 'sunbird-ui-component';
   selector: 'sb-card-config',
   templateUrl: './card-config.html',
   // add NgbAlertConfig  to the component providers
-  providers: [SbCardConfig]
+  providers: [SbdCardConfig]
 })
-export class SbCardConfig {
-  @Input() public alerts: Array<string> = [];
+export class SbdCardConfig {
+  @Input() public cards: Array<string> = [];
 
   constructor(cardConfig: SbCardConfig) {
     // customize default values of alerts used by this component tree

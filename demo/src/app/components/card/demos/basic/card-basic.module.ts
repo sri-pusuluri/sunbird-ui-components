@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { SbModule } from 'sunbird-ui-component';
-import { SbCardBasic } from './card-basic';
+import { NgbModule } from 'sunbird-ui-component';
+import { SbdCardBasic } from './card-basic';
 
 @NgModule({
-  imports: [BrowserModule, NgbModule, SbModule],
-  declarations: [SbCardBasic],
-  exports: [SbCardBasic],
-  bootstrap: [SbCardBasic]
+  imports: [BrowserModule, NgbModule],
+  declarations: [SbdCardBasic],
+  exports: [SbdCardBasic],
+  bootstrap: [SbdCardBasic]
 })
-export class SbCardBasicModule {}
+export class SbdCardBasicModule {}
