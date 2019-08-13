@@ -7,13 +7,13 @@ import {Snippet} from '../../shared/code/snippet';
 export class GettingStartedPage {
   codeInstall = Snippet({
     lang: 'bash',
-    code: `npm install --save @Sunbird-Ed/sunbird-ui-components`,
+    code: `npm install --save sunbird-ui-components`,
   });
 
   codeRoot = Snippet({
     lang: 'typescript',
     code: `
-      import {SbModule} from '@Sunbird-Ed/sunbird-ui-components';
+      import {SbModule} from 'sunbird-ui-components';
 
       @NgModule({
         ...
@@ -28,11 +28,11 @@ export class GettingStartedPage {
   codeOther = Snippet({
     lang: 'typescript',
     code: `
-      import {SbPaginationModule, SbbAlertModule} from '@Sunbird-Ed/sunbird-ui-components';
+      import {NgbPaginationModule,NgbAlertModule} from 'sunbird-ui-components';
 
       @NgModule({
         ...
-        imports: [SbPaginationModule, SbAlertModule, ...],
+        imports: [NgbPaginationModule, NgbAlertModule, ...],
         ...
       })
       export class YourAppModule {
@@ -44,7 +44,7 @@ export class GettingStartedPage {
     lang: 'typescript',
     code: `
       map: {
-        '@Sunbird-Ed/sunbird-ui-components': 'node_modules/@Sunbird-Ed/sunbird-ui-components/bundles/sb.js',
+        'sunbird-ui-components': 'node_modules/sunbird-ui-components/bundles/sb.js',
       }
     `,
   });
