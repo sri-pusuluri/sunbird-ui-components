@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from 'sunbird-ui-component';
 
 import {AppComponent} from './app.component';
 import {routing} from './app.routing';
+import {SbCardModule} from './components/card/card.module';
 import {NgbdAccordionModule} from './components/accordion/accordion.module';
 import {NgbdAlertModule} from './components/alert/alert.module';
 import {NgbdButtonsModule} from './components/buttons/buttons.module';
@@ -29,6 +30,7 @@ import {NgbdSharedModule} from './shared';
 
 
 const DEMOS = [
+  SbCardModule,
   NgbdAccordionModule,
   NgbdAlertModule,
   NgbdButtonsModule,
@@ -59,4 +61,4 @@ const PAGES = [
   imports: [BrowserModule, routing, NgbModule, NgbdSharedModule, ...DEMOS],
   bootstrap: [AppComponent]
 })
-export class NgbdModule {}
+export class SbdModule {}

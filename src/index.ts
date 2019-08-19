@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 
+import {SbCardModule} from './card/card.module';
 import {NgbAccordionModule} from './accordion/accordion.module';
 import {NgbAlertModule} from './alert/alert.module';
 import {NgbButtonsModule} from './buttons/buttons.module';
@@ -32,6 +33,7 @@ export {
   NgbPanelTitle,
   NgbPanelToggle
 } from './accordion/accordion.module';
+export {SbCard, SbCardConfig, SbCardModule} from './card/card.module';
 export {NgbAlert, NgbAlertConfig, NgbAlertModule} from './alert/alert.module';
 export {NgbButtonLabel, NgbButtonsModule, NgbCheckBox, NgbRadio, NgbRadioGroup} from './buttons/buttons.module';
 export {
@@ -128,7 +130,7 @@ export {Placement} from './util/positioning';
 
 
 const NGB_MODULES = [
-  NgbAccordionModule, NgbAlertModule, NgbButtonsModule, NgbCarouselModule, NgbCollapseModule, NgbDatepickerModule,
+  SbCardModule, NgbAccordionModule, NgbAlertModule, NgbButtonsModule, NgbCarouselModule, NgbCollapseModule, NgbDatepickerModule,
   NgbDropdownModule, NgbModalModule, NgbPaginationModule, NgbPopoverModule, NgbProgressbarModule, NgbRatingModule,
   NgbTabsetModule, NgbTimepickerModule, NgbToastModule, NgbTooltipModule, NgbTypeaheadModule
 ];
