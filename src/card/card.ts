@@ -57,9 +57,6 @@ export class SbCardClass {
   host: {'role': 'alert', 'class': 'alert', '[class.alert-dismissible]': 'dismissible'},
   template: `
     <ng-content></ng-content>
-    <button class="btn btn-link" [ngbPanelToggle]="panel">
-      {{panel.title}}<ng-template [ngTemplateOutlet]="panel.titleTpl?.templateRef"></ng-template>
-    </button>
     `,
   styleUrls: ['./card.scss']
 })
