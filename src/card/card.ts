@@ -1,5 +1,6 @@
 import {
   Component,
+  Directive,
   Input,
   Output,
   EventEmitter,
@@ -9,16 +10,46 @@ import {
   OnChanges,
   OnInit,
   SimpleChanges,
-  ViewEncapsulation
+  ViewEncapsulation,
+  TemplateRef
 } from '@angular/core';
 
 import {SbCardConfig} from './card-config';
 
-/**
- * Alert is a component to provide contextual feedback messages for user.
- *
- * It supports several alert types and can be dismissed.
- */
+@Directive({selector: 'ng-template[sbCardTitle]'})
+export class SbCardTitle {
+  constructor(public templateRef: TemplateRef<any>) {}
+}
+@Directive({selector: 'ng-template[sbCardTopic1]'})
+export class SbCardTopic1 {
+  constructor(public templateRef: TemplateRef<any>) {}
+}
+@Directive({selector: 'ng-template[sbCardTopic2]'})
+export class SbCardTopic2 {
+  constructor(public templateRef: TemplateRef<any>) {}
+}
+@Directive({selector: 'ng-template[sbCardOrg]'})
+export class SbCardOrg {
+  constructor(public templateRef: TemplateRef<any>) {}
+}
+@Directive({selector: 'ng-template[sbCardLabel]'})
+export class SbCardLabel {
+  constructor(public templateRef: TemplateRef<any>) {}
+}
+@Directive({selector: 'ng-template[sbCardSubject]'})
+export class SbCardSubject {
+  constructor(public templateRef: TemplateRef<any>) {}
+}
+@Directive({selector: 'ng-template[sbCardMedium'})
+export class SbCardMedium {
+  constructor(public templateRef: TemplateRef<any>) {}
+}
+@Directive({selector: 'ng-template[sbCardClass'})
+export class SbCardClass {
+  constructor(public templateRef: TemplateRef<any>) {}
+}
+
+
 @Component({
   selector: 'sb-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -26,15 +57,16 @@ import {SbCardConfig} from './card-config';
   host: {'role': 'alert', 'class': 'alert', '[class.alert-dismissible]': 'dismissible'},
   template: `
     <ng-content></ng-content>
-    <button *ngIf="dismissible" type="button" class="close" aria-label="Close" i18n-aria-label="@@ngb.alert.close"
-      (click)="closeHandler()">
-      <span aria-hidden="true">&times;</span>
+    <button class="btn btn-link" [ngbPanelToggle]="panel">
+      {{panel.title}}<ng-template [ngTemplateOutlet]="panel.titleTpl?.templateRef"></ng-template>
     </button>
     `,
   styleUrls: ['./card.scss']
 })
-export class SbCard implements OnInit,
-    OnChanges {
+
+
+
+export class SbCard implements OnInit, OnChanges {
   /**
    * If `true`, alert can be dismissed by the user.
    *
