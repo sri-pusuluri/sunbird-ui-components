@@ -1,9 +1,9 @@
 import {
   Component,
   Directive,
-  Input,
   Output,
   EventEmitter,
+  ContentChild,
   ChangeDetectionStrategy,
   Renderer2,
   ElementRef,
@@ -11,7 +11,9 @@ import {
   OnInit,
   SimpleChanges,
   ViewEncapsulation,
-  TemplateRef
+  TemplateRef,
+  Input,
+  AfterContentChecked
 } from '@angular/core';
 
 import {SbCardConfig} from './card-config';
@@ -56,47 +58,17 @@ export class SbCardClass {
   encapsulation: ViewEncapsulation.None,
   host: {'role': 'alert', 'class': 'alert', '[class.alert-dismissible]': 'dismissible'},
   template: `
-    <ng-content></ng-content>
     `,
   styleUrls: ['./card.scss']
 })
 
-
-
-export class SbCard implements OnInit, OnChanges {
-  /**
-   * If `true`, alert can be dismissed by the user.
-   *
-   * The close button (×) will be displayed and you can be notified
-   * of the event with the `(close)` output.
-   */
-  @Input() dismissible: boolean;
-  /**
-   * Type of the alert.
-   *
-   * Bootstrap provides styles for the following types: `'success'`, `'info'`, `'warning'`, `'danger'`, `'primary'`,
-   * `'secondary'`, `'light'` and `'dark'`.
-   */
-  @Input() type: string;
-  /**
-   * An event emitted when the close button is clicked. It has no payload and only relevant for dismissible alerts.
-   */
-  @Output() close = new EventEmitter<void>();
+export class SbCard implements OnInit, AfterContentChecked  {
+  @ContentChild(SbCardTitle, {read: TemplateRef, static: false}) sbCardTitle: TemplateRef<any>| null = null ;
+  ngAfterContentChecked() {
+  }
 
   constructor(config: SbCardConfig, private _renderer: Renderer2, private _element: ElementRef) {
-    this.dismissible = config.dismissible;
-    this.type = config.type;
   }
 
-  closeHandler() { this.close.emit(null); }
-
-  ngOnChanges(changes: SimpleChanges) {
-    const typeChange = changes['type'];
-    if (typeChange && !typeChange.firstChange) {
-      this._renderer.removeClass(this._element.nativeElement, `alert-${typeChange.previousValue}`);
-      this._renderer.addClass(this._element.nativeElement, `alert-${typeChange.currentValue}`);
-    }
-  }
-
-  ngOnInit() { this._renderer.addClass(this._element.nativeElement, `alert-${this.type}`); }
+  ngOnInit() { }
 }
