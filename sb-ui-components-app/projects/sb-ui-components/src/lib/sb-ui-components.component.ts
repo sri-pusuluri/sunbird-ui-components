@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'sb-sb-ui-components',
   template: `
     <p>
-      sb-ui-components works!
+      sb-ui-components works Lakhan Ji!
     </p>
   `,
   styles: []
