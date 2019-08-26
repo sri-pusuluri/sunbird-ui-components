@@ -7,7 +7,14 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "lib": "ng build sb-ui-components --watch",
+    "package": "npm run lib && npm run npm_pack",
+    "pack": "cd dist/sb-ui-components && npm pack",
+    "publish": "cd dist/sb-ui-components && npm publish",
+    "publish-minor": "cd dist/sb-ui-components && npm publish minor",
+    "publish-medium": "cd dist/sb-ui-components && npm publish medium",
+    "publish-major": "cd dist/sb-ui-components && npm publish major"
   },
   "private": true,
   "dependencies": {
@@ -30,9 +37,9 @@
     "@angular/cli": "~7.3.9",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
