@@ -8,7 +8,13 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "lib": "ng build sb-ui-components --watch"
+    "lib": "ng build sb-ui-components --watch",
+    "package": "npm run lib && npm run npm_pack",
+    "pack": "cd dist/sb-ui-components && npm pack",
+    "publish": "cd dist/sb-ui-components && npm publish",
+    "publish-minor": "cd dist/sb-ui-components && npm publish minor",
+    "publish-medium": "cd dist/sb-ui-components && npm publish medium",
+    "publish-major": "cd dist/sb-ui-components && npm publish major"
   },
   "private": true,
   "dependencies": {
