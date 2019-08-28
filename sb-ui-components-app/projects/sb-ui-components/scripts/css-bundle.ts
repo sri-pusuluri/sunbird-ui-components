@@ -5,7 +5,7 @@ import { writeFile } from 'fs-extra';
 /** Bundles all SCSS files into a single file */
 async function bundleScss() {
   const { found, bundledContent, imports } = await new Bundler()
-    .bundle('./projects/sb-ui-components/src/lib/styles/_styles.scss', ['./projects/sb-ui-components/src/lib/styles/**/*.scss']);
+    .bundle('./projects/sb-ui-components/src/lib/styles/styles.scss', ['./projects/sb-ui-components/src/lib/styles/**/*.scss']);
 
   if (imports) {
     const cwd = process.cwd();
