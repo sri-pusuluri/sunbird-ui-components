@@ -3,10 +3,9 @@ import { Bundler } from 'scss-bundle';
 import { writeFile } from 'fs-extra';
 
 /** Bundles all SCSS files into a single file */
-console.log('Hii');
 async function bundleScss() {
   const { found, bundledContent, imports } = await new Bundler()
-    .bundle('../src/lib/styles/sunbird/_styles.scss', ['../src/lib/styles/**/*.scss']);
+    .bundle('./projects/sb-ui-components/src/lib/styles/_styles.scss', ['./projects/sb-ui-components/src/lib/styles/**/*.scss']);
 
   if (imports) {
     const cwd = process.cwd();
@@ -22,7 +21,7 @@ async function bundleScss() {
   }
 
   if (found) {
-    await writeFile('../dist/lib/styles/sunbird/_styles.scss', bundledContent);
+    await writeFile('./dist/sb-ui-components/lib/styles.scss', bundledContent);
   }
 }
 
