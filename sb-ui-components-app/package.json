@@ -14,7 +14,8 @@
     "publish": "cd dist/sb-ui-components && npm publish",
     "publish-minor": "cd dist/sb-ui-components && npm publish minor",
     "publish-medium": "cd dist/sb-ui-components && npm publish medium",
-    "publish-major": "cd dist/sb-ui-components && npm publish major"
+    "publish-major": "cd dist/sb-ui-components && npm publish major",
+    "postbuild": "ts-node ./projects/sb-ui-components/scripts/css-bundle.ts"
   },
   "private": true,
   "dependencies": {
@@ -106,6 +107,7 @@
     "node-sass": "^4.12.0",
     "protractor": "~5.4.0",
     "rimraf": "^2.6.3",
+    "scss-bundle": "^3.0.1",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.0",
