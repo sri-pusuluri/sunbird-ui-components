@@ -46,12 +46,7 @@ body {
     padding-bottom: $base-block-space * 3;
   }
 }
-.sb-offline {
-  padding-bottom: 145px;
-  .footer-fix {
-    min-height: calc(100vh - 180px);
-  }
-}
+
 
 *[lang="en"] body {
   font-family: $font-stack-en;
@@ -66,62 +61,3 @@ body {
 }
 
 
-.publicmenusection.ui.secondary.menu .active.item {
-  color: $primary-color;
-  text-transform: capitalize;
-}
-.publicmenusection.ui.secondary.vertical.menu > .item {
-  text-transform: capitalize;
-}
-
-.sb-placeholder{
-  justify-content: center !important;
-}
-[dir="rtl"] {
-  .sb-explore-qr-container{
-    .dial-section-column {
-      border-right:0px solid rgba(51, 51, 51,0.1) !important;
-      border-left:1px solid rgba(51, 51, 51,0.1);
-    }
-  }
-}
-
-[dir="ltr"] {
-  .sb-explore-qr-container{
-    .dial-section-column {
-      border-left:0px solid rgba(51, 51, 51,0.1);
-      border-right:1px solid rgba(51, 51, 51,0.1);
-    }
-  }
-}
-.description.annannouncement-description{
-  .sb-label-status-error {
-    color: $sb-label-status-error-color;
-    font-size: 11px;
-  }
-
-  .sb-label-12size {
-    font-size: 11px;
-  }
-}
-// don't delete this 
-.iziModal-isAttached{
-  body{
-    overflow: hidden;
-  }
-}
-.sb-prominent-filter{
-  .accordion {
-    .content {
-      padding: .5em 0 0 0;
-    }
-  }
-}
-
-// calender styles
-.ui.calendar .ui.celled.table tr td, .ui.calendar .ui.celled.table tr th {
-  cursor:pointer;
-  }
-  .ui.calendar .ui.table tr td.disabled, .ui.calendar .ui.table tr.disabled td, .ui.calendar .ui.table tr.disabled:hover, .ui.calendar .ui.table tr:hover td.disabled {
-  cursor:default
-  }
