@@ -8,14 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "lib": "ng build sb-ui-components --watch",
-    "lib-css": "ts-node ./projects/sb-ui-components/scripts/css-bundle.ts",
-    "package": "npm run lib && npm run npm_pack",
-    "pack": "cd dist/sb-ui-components && npm pack",
-    "publish": "cd dist/sb-ui-components && npm publish",
-    "publish-minor": "cd dist/sb-ui-components && npm publish minor",
-    "publish-medium": "cd dist/sb-ui-components && npm publish medium",
-    "publish-major": "cd dist/sb-ui-components && npm publish major"
+    "github": "ng build sb-ui-components-app --prod --base-href /sunbird-ui-components/sb-ui-components-app/dist/sb-ui-components-app/",
+    "publish": "cd projects/sb-ui-components && npm version patch && cd ../.. && ng build sb-ui-components && ts-node ./projects/sb-ui-components/scripts/css-bundle.ts &&  cd dist/sb-ui-components && npm publish"
   },
   "private": true,
   "dependencies": {
@@ -105,6 +99,7 @@
     "merge-stream": "^2.0.0",
     "ng-packagr": "^4.2.0",
     "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
     "protractor": "~5.4.0",
     "rimraf": "^2.6.3",
     "scss-bundle": "^3.0.1",

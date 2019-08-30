@@ -1,4 +1,6 @@
 @import '../styles/sunbird/variables';
+@import '../styles/sunbird/mixins/mixins';
+@import '../styles/sunbird/base/buttons';
 /* sb modal component css */
 .sbmodal {
     &--overlay {
