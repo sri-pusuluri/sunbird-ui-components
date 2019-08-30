@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: column;
   cursor:pointer;
+  position: relative;
   &--resource {
   }
   &--course {
@@ -25,14 +26,17 @@
     flex-direction: row;
     align-items: center;
     padding: 8px;
-    height: 80px;
+    height: 88px;
   }
   &__img {
-    height: 64px;
-    width: 64px;
+    height: 76px;
+    width: 76px;
     overflow: hidden;
     margin-right: 8px;
-    flex: 1 0 64px;
+    flex: inherit;
+    @media screen and (min-width: 768px) {
+      flex: 1 0 76px;
+    }
     img {
       width: 100%;
     }
@@ -127,11 +131,13 @@
 
 .sbcard__progressbar {
     height: 4px;
-    position: relative;
+    position: absolute;
     margin: 0px 0 0px;
     background: #999;
     border-radius: 0px;
-    box-shadow: inset 0 -1px 1px rgba(255,255,255,.3)
+    box-shadow: inset 0 -1px 1px rgba(255,255,255,.3);
+    width: 100%;
+    bottom: 0px;
 }
 .sbcard__progressbar > span {
   display: block;

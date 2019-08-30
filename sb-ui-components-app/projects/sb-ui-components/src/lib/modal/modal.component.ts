@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
   
-  @Input() modaltitle: string;
+  @Input() title: string;
 
   constructor() { }
 
