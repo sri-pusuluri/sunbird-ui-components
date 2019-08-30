@@ -265,6 +265,7 @@ Apache-2.0
 
 
 sb-ui-components
+MIT
 
 zone.js
 MIT

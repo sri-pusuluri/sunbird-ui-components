@@ -1,4 +1,4 @@
-import { Injectable, Component, NgModule, Input, defineInjectable } from '@angular/core';
+import { Injectable, Component, Input, NgModule, defineInjectable } from '@angular/core';
 
 /**
  * @fileoverview added by tsickle
