@@ -1,0 +1,91 @@
+
+.sb-landing-page {
+  ul {
+    padding:0;
+    margin:0;
+  }
+  height: 100vh;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding:24px;
+  .sb-landing-page-container {
+
+    .sb-landing-page-logo {
+      width: 150px;
+      height: 150px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .sb-landing-section-title {
+      margin-top: 15px;
+
+      .sb-doc-app-title {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .sb-landing-page-search {
+    margin: 20px 0;
+  }
+}
+
+.sb-landing-page-list {
+  .sb-site-list-item {
+    &:hover {
+      border: none;
+      a {
+        color: #000;
+      }
+    }
+  }
+}
+#myUL {
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 200px;
+  overflow:auto;
+
+  li {
+    list-style: none;
+    margin: 0;
+    display: inline-block;
+
+    ul li {
+      display: inline-block;
+      a {
+      margin: 4px;
+      padding: 4px 12px;
+      line-height: inherit;
+      border: 1px solid var(--gray-100);
+      border-radius: 60px;
+      background: #fff;
+      font-size: 12px;
+      display: inline-block;
+      &:hover {
+        background: var(--primary-200);
+        color: var(--white);
+        box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
+      }
+      }
+    }
+  }
+}
+
+h4.sb-site-list-heading {
+  display: none;
+}
+
+.sb-landing-page-copyright {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-top: 24px;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  margin-top: 24px;
+  font-size:12px;
+}
