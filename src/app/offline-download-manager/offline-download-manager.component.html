@@ -1,0 +1,93 @@
+<!--Page Content-->
+<div class="docs-sections" *ngFor="let section of sections;">
+
+  <h4 class="docs-sectionHeading">
+    {{section.title}}
+    <i class="fa fa-code text-gray docs-expandCode" (click)="section.expandCode = !section.expandCode"
+      title="Toggle Code" tabindex="0"></i>
+  </h4>
+
+  <!--Display output-->
+  <div class="docs-sectionDemoCode">
+    <div class="container my-16 sb-certificate-trained">
+      <div class="d-flex flex-ai-center sb-ct-list list-heading">
+        <label class="mb-0">Trainings attended (15)</label>
+      </div>
+      <div class="d-flex flex-ai-center sb-ct-list list-item">
+        <label class="mr-auto mb-0">Systems and Routiens -1</label>
+        <span class="list-date mr-8">Jan 19</span>
+        <button class="sb-btn sb-btn-normal sb-btn-link sb-btn-link-primary sb-left-icon-btn"><i
+            class="download icon"></i>Download</button>
+        <button class="sb-btn sb-btn-normal sb-btn-link sb-btn-link-primary sb-left-icon-btn"><i
+            class="download icon"></i>Share</button>
+      </div>
+      <div class="d-flex flex-ai-center sb-ct-list list-item">
+        <label class="mr-auto mb-0">Sachin invite Batch</label>
+        <span class="list-date mr-8">Feb 19</span>
+        <button class="sb-btn sb-btn-normal sb-btn-link sb-btn-link-primary sb-left-icon-btn"><i
+            class="download icon"></i>Share</button>
+      </div>
+      <div class="d-flex flex-ai-center sb-ct-list list-item">
+        <label class="mr-auto mb-0">Sachin invite Batch</label>
+        <span class="list-date mr-8">Feb 19</span>
+        <div class="sb-certificate-trained-line d-flex flex-ai-center flex-jc-center">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+      <div class="d-flex flex-ai-center flex-jc-center sb-ct-list list-item">
+        <button class="sb-btn sb-btn-normal sb-btn-primary sb-right-icon-btn"
+          (click)="showNormalModal = !showNormalModal">+11 More<i class="chevron down icon"></i></button>
+      </div>
+    </div>
+
+    <sui-modal *ngIf="showNormalModal" [mustScroll]="true" [isClosable]="true" [transitionDuration]="0"
+      [size]="'normal'" class="sb-modal" appBodyScroll (dismissed)="showNormalModal = !showNormalModal" #modal>
+      <div class="sb-modal-header">
+        Modal Heading
+      </div>
+      <div class="sb-modal-content">
+        <div class="sb-merge-account-modal">
+          <p class="mb-8">If you have two accounts with DIKSHA, click <b>Merge</b> to:</p>
+          <ul class="m-0">
+            <li class="mb-8">
+              Combine usage details of the other account with this account
+            </li>
+            <li class="mb-8">
+              delete the other account
+            </li>
+          </ul>
+          <p>Else, click <b>Cancel</b></p>
+        </div>
+      </div>
+      <div class="sb-modal-actions">
+        <button class="sb-btn sb-btn-normal sb-btn-primary" (click)="showNormalModal = !showNormalModal">
+          Merge
+        </button>
+        <button class="sb-btn sb-btn-normal sb-btn-outline-primary" (click)="showNormalModal = !showNormalModal">
+          Cancel
+        </button>
+      </div>
+    </sui-modal>
+  </div>
+  <!--/Display output-->
+
+  <!--Display code-->
+  <div class="docs-sectionCopyCode" *ngIf="section.expandCode">
+
+    <!--Copy code button-->
+    <button ngxClipboard [cbContent]="section.copyCode"
+      class="sb-btn sb-btn-primary sb-btn-xs fa fa-copy btn-copy"></button>
+    <!--/Copy code button-->
+
+    <!--Copy code display-->
+    <pre>
+      <code [highlight]="section.copyCode"></code>
+    </pre>
+    <!--/Copy code display-->
+
+  </div>
+  <!--/Display code-->
+
+</div>
+<!--Page Content-->

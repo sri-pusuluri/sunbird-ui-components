@@ -1,0 +1,101 @@
+
+
+<!--Page Content-->
+<div class="docs-sections">
+
+  <h4 class="docs-sectionHeading">
+      Course Card
+    <i class="fa fa-code text-gray docs-expandCode" (click)="section.expandCode = !section.expandCode" title="Toggle Code" tabindex="0"></i>
+  </h4> 
+
+  <!--Display output-->
+  <div class="docs-sectionDemoCode" [innerHTML]="section.demoCode | keepHtml">
+      <div class="masonry-grid">
+          <div class="masonry-item">
+            <sb-card 
+              type="course"
+              title="Data Structure and Algorithm - Assignment 1 Paperback"
+              subject="Subject Name"
+              medium="Medium Name"
+              class="Class Name"
+              topic="Global positioning system and its application"
+              subtopic="Limits of artificial intelligence"
+              img="assets/images/book.png"
+              org="Academy of European Law (ERA)"
+              category="Book"
+            ></sb-card>
+          </div>
+          <!-- 2nd card -->
+          <div class="masonry-item">
+            <sb-card 
+              type="course"
+              title="Data Structure and Algorithm - Assignment 1 Paperback"
+              subject="Subject Name"
+              medium="Medium Name"
+              class="Class Name"
+              topic="Global positioning system and its application"
+              subtopic="Limits of artificial intelligence"
+              img="assets/images/book.png"
+              org="Academy of European Law (ERA)"
+              category="Book"
+            ></sb-card>
+          </div>
+          <!-- 3rd card -->
+          <div class="masonry-item">
+            <sb-card 
+              type="course"
+              title="Data Structure and Algorithm - Assignment 1 Paperback"
+              subject="Subject Name"
+              medium="Medium Name"
+              class="Class Name"
+              topic="Global positioning system and its application"
+              subtopic="Limits of artificial intelligence"
+              img="assets/images/book.png"
+              org="Academy of European Law (ERA)"
+              category="Book"
+            ></sb-card>
+          </div>
+    
+          <!-- 4th card -->
+          <div class="masonry-item">
+            <sb-card 
+              type="course"
+              title="Data Structure and Algorithm - Assignment 1 Paperback"
+              subject="Subject Name"
+              medium="Medium Name"
+              class="Class Name"
+              topic="Global positioning system and its application"
+              subtopic="Limits of artificial intelligence"
+              img="assets/images/book.png"
+              org="Academy of European Law (ERA)"
+              category="Book"
+            ></sb-card>
+          </div>
+          </div>
+      </div>
+  <!--/Display output-->
+      <!--Display output-->
+      <div class="docs-sectionDemoCode">
+      
+        <!--/Display output-->
+
+  <!--Display code-->
+  <div class="docs-sectionCopyCode" *ngIf="section.expandCode">
+
+    <!--Copy code button-->
+    <button ngxClipboard [cbContent]="courseCardCode" class="sb-btn sb-btn-primary sb-btn-xs fa fa-copy btn-copy"></button>
+    <!--/Copy code button-->
+
+    <!--Copy code display-->
+    <pre>
+      <code [highlight]="courseCardCode"></code>
+    </pre>
+    <!--/Copy code display-->
+
+  </div>
+  <!--/Display code-->
+  
+</div>
+<!--Page Content-->
+
+

@@ -1,24 +1,31 @@
-# SbUiComponents
+# Sunbird UI Components NPM Package
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+### Using in Angular project
 
-## Code scaffolding
+Here are the steps to use this library.
 
-Run `ng generate component component-name --project sb-ui-components` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project sb-ui-components`.
-> Note: Don't forget to add `--project sb-ui-components` or else it will be added to the default project in your `angular.json` file. 
 
-## Build
+1) Install Sunbird Components Library
+   ```
+      npm i --save sb-ui-components
+   ```
 
-Run `ng build sb-ui-components` to build the project. The build artifacts will be stored in the `dist/` directory.
+2) Add Global CSS in `angular.json` -
+    ```
+      "styles": [
+          "src/styles.scss",
+          "dist/sb-ui-components/lib/styles.scss"
+          ],
+    ```
 
-## Publishing
-
-After building your library with `ng build sb-ui-components`, go to the dist folder `cd dist/sb-ui-components` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test sb-ui-components` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+3) Import Library in `app.module.ts` -
+   ```
+      import { SbUiComponentsModule } from 'sb-ui-components';
+      @NgModule({
+        ...
+        imports: [SbUiComponentsModule, ...],
+        ...
+      })
+      export class YourAppModule {
+      }
+   ```
