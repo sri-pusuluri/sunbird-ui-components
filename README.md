@@ -1,27 +1,24 @@
-# SbUiComponentsApp
+# SB UI Components NPM Library
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+NPM Package - https://www.npmjs.com/package/sb-ui-components
 
-## Development server
+## Creating Components in Sunbird UI Components NPM Library
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng generate component component-name --project sb-ui-components` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project sb-ui-components`.
+> Note: Don't forget to add `--project sb-ui-components` or else it will be added to the default project in your `angular.json` file. 
 
-## Code scaffolding
+## Building Library
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run nodemon while in development mode. or else run `ng build sb-ui-components` to build the project. The build artifacts will be stored in the `dist/sb-ui-components` directory.
 
-## Build
+## Publishing NPM Package
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+After building your library with `ng build sb-ui-components`, run command `npm run publish`.
+
+## Regenerate Github Site
+
+Run command `npm run github`, and push changes to github.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `ng test sb-ui-components` to execute the unit tests via [Karma](https://karma-runner.github.io).

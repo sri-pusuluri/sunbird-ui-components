@@ -1,6 +1,15 @@
 {
   "name": "sb-ui-components",
-  "version": "0.3.5",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sunbird-Ed/sunbird-ui-components.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sunbird-Ed/sunbird-ui-components/issues"
+  },
+  "homepage": "https://github.com/Sunbird-Ed/sunbird-ui-components#readme",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
