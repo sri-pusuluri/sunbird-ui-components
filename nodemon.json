@@ -2,5 +2,5 @@
   "watch": ["projects/sb-ui-components/"],
   "ext": "ts,scss,css,json,js,html,svg,png,jpeg",
   "ignore": [],
-  "exec": "ng build sb-ui-components && ts-node projects/sb-ui-components/scripts/css-bundle.ts"
+  "exec": "ng build sb-ui-components && ts-node projects/sb-ui-components/scripts/css-bundle.ts && ng s"
 }
