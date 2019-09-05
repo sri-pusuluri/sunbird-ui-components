@@ -1,4 +1,4 @@
-<div *ngIf="router.url!='/'" class="docs-body">
+<!-- <div *ngIf="router.url!='/'" class="docs-body">
   <div class="docs-sidebar" [class.docs-hideSidebar]="!showSidebar">
     <i class="fa fa-bars docs-toggleSidebar" (click)="showSidebar = !showSidebar" title="Toggle Sidebar"></i>
     <app-sidebar (getMatchedLocationPath)='displayMatchedLocationPath($event)'></app-sidebar>
@@ -8,10 +8,10 @@
     <router-outlet></router-outlet>
   </div>
 </div>
-<app-landing *ngIf="router.url==='/'" (getMatchedLocationPath)='displayMatchedLocationPath($event)'></app-landing>
+<app-landing *ngIf="router.url==='/'" (getMatchedLocationPath)='displayMatchedLocationPath($event)'></app-landing> -->
 
 
-<!--<div class="sbcard__grid">
+<div class="sbcard__grid" style="padding:32px;">
   <sb-card 
     type="course"
     title="Data Structure and Algorithm - Assignment 1 Paperback"
@@ -64,4 +64,4 @@
 
 <br><br><br><br><br>
 
-<sb-modal title="Modal Heading"></sb-modal>-->
+<sb-modal title="Modal Heading"></sb-modal>
