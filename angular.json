@@ -24,11 +24,14 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/docs/assets"
             ],
             "styles": [
               "src/styles.scss",
-              "dist/sb-ui-components/lib/styles.scss"
+              "dist/sb-ui-components/lib/styles.scss",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/shepherd.js/dist/css/shepherd-theme-default.css"
             ],
             "scripts": [
               "node_modules/izitoast/dist/js/iziToast.min.js",
@@ -64,8 +67,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "20mb",
+                  "maximumError": "50mb"
                 }
               ]
             }
