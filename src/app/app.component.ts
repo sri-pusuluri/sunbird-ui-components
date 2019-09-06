@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -12,11 +13,14 @@ export let browserRefresh = false;
 export class AppComponent {
   subscription: Subscription;
 
-  constructor(public router: Router) {
+  constructor(public router: Router, private location: Location) {
     this.subscription = router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         browserRefresh = !router.navigated;
-        console.log(router, 'value is');
+        // if (browserRefresh) {
+        //   this.selectedlink = this.location.path().substr(1);
+        // }
+        this.selectedlink = browserRefresh ? this.location.path().substr(1) : this.selectedlink;
       }
   });
   }
