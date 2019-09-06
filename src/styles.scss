@@ -16,15 +16,15 @@
 body,
 html {
   height: 100%;
-  padding:0px;
   margin:0px;
+  padding:0px;
 }
 .docs-body {
   display: flex;
   background: #f3f7fa;
   // height:100vh;
   .docs-sidebar {
-    width: 320px;
+    width: 220px;
     height: 100vh;
     padding: 0px 0px 10px 0px;
     background: #fbfbfb;
@@ -53,8 +53,9 @@ html {
       }
     }
     &.docs-hideSidebar {
-      width:320px;
-      margin-left:-320px;
+      width: 0;
+      padding: 0;
+      margin-left: -220px;
       .docs-toggleSidebar {
         left: 0px;
       }
@@ -128,7 +129,7 @@ html {
     }
   }
   .docs-content {
-    padding: 0px 60px 60px 60px;
+    padding: 140px 60px 60px 280px;
     width: 100vw;
     min-height: 100vh;
     // height: auto;
@@ -136,20 +137,14 @@ html {
     background: var(--primary-0);
     // overflow-y: auto;
     &.docs-fullWidth {
-      padding: 0px 60px 60px 60px;
+      padding: 140px 60px 60px 60px;
       .docs-pageHeading {
-        // width: 100%;
+        width: 100%;
       }
-    }
-    .docs-toggleSidebar {
-      position: absolute;
-    top: 36px;
-    right: 30px;
-    font-size: 24px;cursor: pointer;
     }
     .docs-pageHeading {
       min-height: 90px;
-      padding: 12px 60px 12px 30px;
+      padding: 12px 60px;
       line-height: normal;
       margin-left: -60px;
       background: #0d9474;
@@ -159,8 +154,8 @@ html {
       background: linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
       margin-right: -60px;
       color: #fff;
-      // width: 100%;
-      position: sticky;
+      width: calc(100% - 220px);
+      position: fixed;
       z-index: 9999;
       top: 0px;
       text-transform: capitalize;

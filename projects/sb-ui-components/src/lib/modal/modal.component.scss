@@ -160,6 +160,13 @@ $sb-modal-corner-radius:8px;
       }
     }
   
+    // is closable
+    &--isNotClosable {
+      .sbbtn-close{
+      display:none;
+      }
+    }
+
     //sbmodal type warning,success,error,default
     &--primary {
       .sbmodal__header {
