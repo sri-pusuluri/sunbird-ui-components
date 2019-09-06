@@ -16,6 +16,8 @@
 body,
 html {
   height: 100%;
+  padding:0px;
+  margin:0px;
 }
 .docs-body {
   display: flex;
@@ -29,6 +31,7 @@ html {
     position: fixed;
     top: 0;
     left: 0;
+    display:none;
     // overflow-y: auto;
     // border-right: 1px solid #ddd;
     z-index: 99999;
@@ -127,7 +130,7 @@ html {
     }
   }
   .docs-content {
-    padding: 140px 60px 60px 280px;
+    padding: 0px 60px 60px 60px;
     width: 100vw;
     min-height: 100vh;
     // height: auto;
@@ -135,14 +138,20 @@ html {
     background: var(--primary-0);
     // overflow-y: auto;
     &.docs-fullWidth {
-      padding: 140px 60px 60px 60px;
+      padding: 0px 60px 60px 60px;
       .docs-pageHeading {
         width: 100%;
       }
     }
+    .docs-toggleSidebar {
+      position: absolute;
+    top: 36px;
+    right: 30px;
+    font-size: 24px;cursor: pointer;
+    }
     .docs-pageHeading {
       min-height: 90px;
-      padding: 12px 60px;
+      padding: 12px 60px 12px 30px;
       line-height: normal;
       margin-left: -60px;
       background: #0d9474;
@@ -152,8 +161,8 @@ html {
       background: linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
       margin-right: -60px;
       color: #fff;
-      width: calc(100% - 220px);
-      position: fixed;
+      // width: 100%;
+      position: sticky;
       z-index: 9999;
       top: 0px;
       text-transform: capitalize;

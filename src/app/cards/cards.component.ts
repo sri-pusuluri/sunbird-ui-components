@@ -2,7 +2,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-cards',
-  templateUrl: './cards.component.html'
+  templateUrl: './cards.component.html',
+  styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit {
   constructor() { }
@@ -30,7 +31,7 @@ export class CardsComponent implements OnInit {
       subtopic: 'Limits of artificial intelligence',
       img: 'assets/images/book.png',
       org: 'Academy of European Law (ERA)',
-      category: 'Book'
+      category: 'Practice'
     },
     {
       title: 'Data Structure and Algorithm - Assignment 1 Paperback',
