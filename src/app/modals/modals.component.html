@@ -1,7 +1,7 @@
 <!--Page Content-->
-
+<sb-modal title="Modal Heading"></sb-modal>
 <!--Large Modal-->
-<div class="docs-sections">
+<div class="docs-sections hide">
   <h4 class="docs-sectionHeading">
     Large Modal
     <i class="fa fa-code text-gray docs-expandCode" (click)="largemodal = !largemodal" title="Toggle Code"
@@ -13,7 +13,7 @@
     <button class="sb-btn sb-btn-primary sb-btn-normal" (click)="showLargeModal = !showLargeModal">
       Show Modal
     </button>
-    <sb-modal title="Modal Heading"></sb-modal>
+   
     <sui-modal *ngIf="showLargeModal" [mustScroll]="true" [isClosable]="true" [transitionDuration]="0" [size]="'large'"
       class="sb-modal" appBodyScroll (dismissed)="showLargeModal = !showLargeModal" #modal>
       <div class="sb-modal-header">
@@ -52,7 +52,7 @@
 <!--/Large Modal-->
 
 <!--Normal Modal-->
-<div class="docs-sections">
+<div class="docs-sections hide">
   <h4 class="docs-sectionHeading">
     Normal Modal
     <i class="fa fa-code text-gray docs-expandCode" (click)="normalmodal = !normalmodal" title="Toggle Code"
@@ -102,7 +102,7 @@
 <!--/Normal Modal-->
 
 <!--Small Modal-->
-<div class="docs-sections">
+<div class="docs-sections hide">
   <h4 class="docs-sectionHeading">
     Small Modal
     <i class="fa fa-code text-gray docs-expandCode" (click)="smallmodal = !smallmodal" title="Toggle Code"
@@ -152,7 +152,7 @@
 <!--/Small Modal-->
 
 <!--Full screen Modal-->
-<div class="docs-sections">
+<div class="docs-sections hide">
   <h4 class="docs-sectionHeading">
     Fullscreen Modal
     <i class="fa fa-code text-gray docs-expandCode" (click)="fullscreenmodal = !fullscreenmodal" title="Toggle Code"
@@ -204,7 +204,7 @@
 <!--/Fullscreen Modal-->
 
 <!--Success Modal-->
-<div class="docs-sections">
+<div class="docs-sections hide">
   <h4 class="docs-sectionHeading">
     Success Modal
     <i class="fa fa-code text-gray docs-expandCode" (click)="successmodal = !successmodal" title="Toggle Code"
@@ -255,7 +255,7 @@
 <!--/Success Modal-->
 
 <!--Error Modal-->
-<div class="docs-sections">
+<div class="docs-sections hide">
   <h4 class="docs-sectionHeading">
     Error Modal
     <i class="fa fa-code text-gray docs-expandCode" (click)="errormodal = !errormodal" title="Toggle Code"
@@ -305,7 +305,7 @@
 <!--/Danger Modal-->
 
 <!--WarningModal-->
-<div class="docs-sections">
+<div class="docs-sections hide">
   <h4 class="docs-sectionHeading">
     Warning Modal
     <i class="fa fa-code text-gray docs-expandCode" (click)="warningmodal = !warningmodal" title="Toggle Code"
@@ -356,7 +356,7 @@
 <!--/Warning Modal-->
 
 <!--Tab Modal-->
-<div class="docs-sections">
+<div class="docs-sections hide">
   <h4 class="docs-sectionHeading">
     Modal with Tab Design
     <i class="fa fa-code text-gray docs-expandCode" (click)="TabModal = !TabModal" title="Toggle Code" tabindex="0"></i>
@@ -412,7 +412,7 @@
 <!--/Tab Modal-->
 
 <!--Center Aligned Modals-->
-<div class="docs-sections">
+<div class="docs-sections hide">
   <h4 class="docs-sectionHeading">
     Modal with Center Aligned Text
     <i class="fa fa-code text-gray docs-expandCode" (click)="CenterAlignedModal = !CenterAlignedModal"

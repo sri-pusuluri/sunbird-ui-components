@@ -8,10 +8,8 @@
 
   <!--Display output-->
   <div class="docs-sectionDemoCode">
-    <div class="masonry-grid">
-        <div class="masonry-item" *ngFor="let card of cards">
-          <sb-card [data]="card"></sb-card>
-        </div>
+    <div class="sbcard__grid">
+          <sb-card  *ngFor="let card of cards" [data]="card"></sb-card>
     </div>
   </div>
   <!--/Display output-->

@@ -7,6 +7,33 @@
   }
 }
 
+// sb card grid & flex
+.sbcard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 0rem;
+  @media screen and (min-width: 768px) {
+    grid-gap: 1rem;
+  }
+}
+
+.sbcard__flex {
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center;
+  sb-card {
+      margin-bottom: 16px;
+      min-width:320px; 
+      margin-right: 16px;
+  }
+  &--wrap {
+    flex-wrap:wrap;
+    justify-content: flex-start;
+  }
+}
+
+// sb card css
 .sbcard {
   width: 100%;
   border-radius: 0px;
@@ -37,7 +64,7 @@
     margin-right: 8px;
     flex: inherit;
     @media screen and (min-width: 768px) {
-      flex: 1 0 76px;
+      flex: 0 0 76px;
     }
     img {
       width: 100%;
