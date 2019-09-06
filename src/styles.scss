@@ -24,14 +24,13 @@ html {
   background: #f3f7fa;
   // height:100vh;
   .docs-sidebar {
-    width: 220px;
+    width: 320px;
     height: 100vh;
     padding: 0px 0px 10px 0px;
     background: #fbfbfb;
     position: fixed;
     top: 0;
     left: 0;
-    display:none;
     // overflow-y: auto;
     // border-right: 1px solid #ddd;
     z-index: 99999;
@@ -54,9 +53,8 @@ html {
       }
     }
     &.docs-hideSidebar {
-      width: 0;
-      padding: 0;
-      margin-left: -220px;
+      width:320px;
+      margin-left:-320px;
       .docs-toggleSidebar {
         left: 0px;
       }
@@ -140,7 +138,7 @@ html {
     &.docs-fullWidth {
       padding: 0px 60px 60px 60px;
       .docs-pageHeading {
-        width: 100%;
+        // width: 100%;
       }
     }
     .docs-toggleSidebar {

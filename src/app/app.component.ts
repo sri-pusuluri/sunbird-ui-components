@@ -20,7 +20,7 @@ export class AppComponent {
       }
   });
   }
-  showSidebar = true;
+  showSidebar = false;
   title = 'docs';
   selectedlink;
 
