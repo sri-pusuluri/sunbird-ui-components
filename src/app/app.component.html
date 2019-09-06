@@ -1,4 +1,4 @@
-<!-- <div *ngIf="router.url!='/'" class="docs-body">
+<div *ngIf="router.url!='/'" class="docs-body">
   <div class="docs-sidebar" [class.docs-hideSidebar]="!showSidebar">
     <i class="fa fa-bars docs-toggleSidebar" (click)="showSidebar = !showSidebar" title="Toggle Sidebar"></i>
     <app-sidebar (getMatchedLocationPath)='displayMatchedLocationPath($event)'></app-sidebar>
@@ -8,60 +8,4 @@
     <router-outlet></router-outlet>
   </div>
 </div>
-<app-landing *ngIf="router.url==='/'" (getMatchedLocationPath)='displayMatchedLocationPath($event)'></app-landing> -->
-
-
-<div class="sbcard__grid" style="padding:32px;">
-  <sb-card 
-    type="course"
-    title="Data Structure and Algorithm - Assignment 1 Paperback"
-    subject="Subject Name"
-    medium="Medium Name"
-    class="Class Name"
-    topic="Global positioning system and its application"
-    subtopic="Limits of artificial intelligence"
-    img="assets/images/book.png"
-    org="Academy of European Law (ERA)"
-    category="Book"
-  ></sb-card>
-  <sb-card 
-    type="course"
-    title="Data Structure and Algorithm - Assignment 1 Paperback"
-    subject="Subject Name"
-    medium="Medium Name"
-    class="Class Name"
-    topic="Global positioning system and its application"
-    subtopic="Limits of artificial intelligence"
-    img="assets/images/book.png"
-    org="Academy of European Law (ERA)"
-    category="Book"
-  ></sb-card>
-  <sb-card 
-    type="course"
-    title="Data Structure and Algorithm - Assignment 1 Paperback"
-    subject="Subject Name"
-    medium="Medium Name"
-    class="Class Name"
-    topic="Global positioning system and its application"
-    subtopic="Limits of artificial intelligence"
-    img="assets/images/book.png"
-    org="Academy of European Law (ERA)"
-    category="Book"
-  ></sb-card>
-  <sb-card 
-    type="course"
-    title="Data Structure and Algorithm - Assignment 1 Paperback"
-    subject="Subject Name"
-    medium="Medium Name"
-    class="Class Name"
-    topic="Global positioning system and its application"
-    subtopic="Limits of artificial intelligence"
-    img="assets/images/book.png"
-    org="Academy of European Law (ERA)"
-    category="Book"
-  ></sb-card>
-</div>
-
-<br><br><br><br><br>
-
-<sb-modal title="Modal Heading"></sb-modal>
+<app-landing *ngIf="router.url==='/'" (getMatchedLocationPath)='displayMatchedLocationPath($event)'></app-landing>
