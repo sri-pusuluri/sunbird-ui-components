@@ -7,16 +7,18 @@
   }
 }
 
-
 .sbcard {
   width: 100%;
-  border-radius: 2px;
+  border-radius: 0px;
   background-color: #ffffff;
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
   display: flex;
   flex-direction: column;
-  cursor:pointer;
+  cursor: pointer;
   position: relative;
+  @media screen and (min-width: 768px) {
+    border-radius: 2px;
+  }
   &--resource {
   }
   &--course {
@@ -124,20 +126,15 @@
     }
   }
 }
-
-
-
-
-
 .sbcard__progressbar {
-    height: 4px;
-    position: absolute;
-    margin: 0px 0 0px;
-    background: #999;
-    border-radius: 0px;
-    box-shadow: inset 0 -1px 1px rgba(255,255,255,.3);
-    width: 100%;
-    bottom: 0px;
+  height: 4px;
+  position: absolute;
+  margin: 0px 0 0px;
+  background: #999;
+  border-radius: 0px;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  width: 100%;
+  bottom: 0px;
 }
 .sbcard__progressbar > span {
   display: block;
@@ -182,11 +179,9 @@
   border-bottom-left-radius: 20px;
   overflow: hidden;
 }
-
 .animate > span:after {
   display: none;
 }
-
 @-webkit-keyframes move {
   0% {
     background-position: 0 0;
@@ -195,7 +190,6 @@
     background-position: 50px 50px;
   }
 }
-
 .orange > span {
   background-color: #f1a165;
   background-image: -webkit-gradient(
@@ -207,7 +201,6 @@
   );
   background-image: -webkit-linear-gradient(#f1a165, #f36d0a);
 }
-
 .red > span {
   background-color: #f0a3a3;
   background-image: -webkit-gradient(
@@ -226,7 +219,6 @@
   -moz-animation: none;
   background-image: none;
 }
-
 
 .sb__ellipsis {
   cursor: pointer;

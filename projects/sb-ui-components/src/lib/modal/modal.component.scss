@@ -3,9 +3,9 @@
 @import '../../styles/sunbird/base/buttons';
 
 // modal component variables
-$sb-modal-header-bg: $primary-400;
-$sb-modal-header-color: $white-color;
-$sb-modal-header-padding:($base-block-space * 0.5) ($base-block-space * 2);
+$sb-modal-header-bg: var(--primary-400);
+$sb-modal-header-color: var(--white);
+$sb-modal-header-padding:calc(var(--base-block-space) * 0.5) calc(var(--base-block-space) * 2);
 $sb-modal-header-height:($base-block-space * 5);
 $sb-modal-fs-header-height:($base-block-space * 7);
 $sb-modal-header-line-height: ($h5-font-size + 8);
@@ -49,7 +49,7 @@ $sb-modal-corner-radius:8px;
     // modal box
   
     margin: 0px auto;
-    position: absolute;
+    position: fixed;
     z-index: 1001;
     text-align: center;
     background: none;
@@ -95,16 +95,7 @@ $sb-modal-corner-radius:8px;
                 }
           }
           .close {
-              color: $white-color;
-              font-size: $font-size-base;
-              @include padding(0 0); //bourbon
-              @include margin(0 0);
-              @include size(($base-block-space * 5), ($base-block-space * 5)); //bourbon
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              cursor: pointer;
-              @include position(absolute, 0 0 null null); //bourbon
+              
           }
     }
     &__content {
@@ -121,10 +112,10 @@ $sb-modal-corner-radius:8px;
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;justify-content: center;
+      justify-content: center;
       @media screen and (min-width: 768px) {
           justify-content: inherit;
+          border-radius:0px 0px 4px 4px;
       }
       .sbbtn + .sbbtn {
         @include margin(0 $base-block-space 0 0);
@@ -247,3 +238,65 @@ $sb-modal-corner-radius:8px;
       }
     }
   }
+
+
+
+  // icons
+  .sbicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    opacity:0.8;
+    //sizes
+    &--xs {
+      width:var(--icon-svg-xs);
+      height:var(--icon-svg-xs);
+    }
+    &--sm {
+      width:var(--icon-svg-sm);
+      height:var(--icon-svg-sm);
+    }
+    &--md {
+      width:var(--icon-svg-md);
+      height:var(--icon-svg-md);
+    }
+    &--lg {
+      width:var(--icon-svg-lg);
+      height:var(--icon-svg-lg);
+    }
+    &--xl {
+      width:var(--icon-svg-xl);
+      height:var(--icon-svg-xl);
+    }
+
+    //colors
+    &--white {
+      fill: var(--white);
+    }
+    &--primary {
+      fill: var(--primary-color);
+    }
+    &--secondary {
+      fill: var(--secondary-color);
+    }
+    &--tertiary {
+      fill: var(--tertiary-color);
+    }
+    &--red {
+      fill: var(--red-400);
+    }
+    &--gray {
+      fill: var(--gray-800);
+    }
+
+    //icons
+    &--close {
+
+    }
+
+  }
+ 
