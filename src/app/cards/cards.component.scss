@@ -24,3 +24,9 @@
     justify-content: flex-start;
   }
 }
+
+.sbscroll {
+&--X {
+  overflow-x:auto;
+}
+}

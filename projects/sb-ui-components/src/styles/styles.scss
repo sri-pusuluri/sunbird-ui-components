@@ -1,9 +1,13 @@
 @import "./sunbird/inlinefonts/fonts";
+
+
 @import "./bootstrap-4.3.1/scss/bootstrap-grid";
+
 @import "./sunbird/variables";
 @import "./sunbird/mixins/mixins";
 @import "./sunbird/base/base";
+
 @import "./sunbird/components/components";
-@import "./sunbird/layout/layout";
-@import "./sunbird/pages/pages";
+// @import "./sunbird/layout/layout";
+// @import "./sunbird/pages/pages";
 @import "./sunbird/global";

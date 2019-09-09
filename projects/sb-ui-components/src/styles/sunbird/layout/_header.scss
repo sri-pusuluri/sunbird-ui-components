@@ -60,7 +60,7 @@
 
 
 .qr-code-btn {
-  background: $white-color !important;
+  background: $white !important;
   color: $primary-color !important;
   font-size: 0.86rem !important;
   border-radius: 3px !important;
@@ -78,7 +78,7 @@
 
 .search-qrcode-divider {
   opacity: 0.4;
-  color: $white-color;
+  color: $white;
   font-size: 22px;
 }
 
@@ -118,7 +118,7 @@
   font-size: 0.86rem;
 
   @media screen and (min-width: 992px) {
-    color: $white-color;
+    color: $white;
   }
 
   .ui.dropdown {
@@ -134,7 +134,7 @@
     }
 
     @media screen and (min-width: 1024px) {
-      color: $white-color;
+      color: $white;
       border: 0;
       font-weight: 500;
       padding: $base-block-space 0 $base-block-space $base-block-space;
@@ -266,7 +266,7 @@
   align-items: center;
   font-weight: bold;
   font-size: $base-block-space * 1.5 ;
-  color: $white-color;
+  color: $white;
   margin: 0;
   padding: $base-block-space;
   width: 160px;
