@@ -1,22 +1,18 @@
-// @import "./typography";
-// @import "./flexbox";
-// @import "./texts";
-// @import "./displays";
-// @import "./background";
-// @import "./overflows";
-// @import "./fonts-sizes";
-// @import "./colors";
-// @import "./positions";
-// @import "./box-shadows";
-// @import "./border-radius";
-// @import "./sizing";
-// @import "./borders";
-
-@import "variables";
 @import "reboot";
-@import "typography";
 @import "margins";
 @import "paddings";
 @import "sizing";
 @import "positions";
-
+@import "typography";
+@import "flexbox";
+@import "texts";
+@import "displays";
+@import "background";
+@import "overflows";
+@import "fonts-sizes";
+@import "colors";
+@import "positions";
+@import "box-shadows";
+@import "border-radius";
+@import "sizing";
+@import "borders";

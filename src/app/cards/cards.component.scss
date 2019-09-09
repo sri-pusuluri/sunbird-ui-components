@@ -16,7 +16,7 @@
   align-items: center;
   sb-card {
       margin-bottom: 16px;
-      min-width:320px; 
+      max-width:320px; 
       margin-right: 16px;
   }
   &--wrap {
@@ -29,4 +29,15 @@
 &--X {
   overflow-x:auto;
 }
+}
+
+.sb__ellipsis {
+  -webkit-line-clamp: 1;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  &--two {
+    -webkit-line-clamp: 2;
+  }
 }

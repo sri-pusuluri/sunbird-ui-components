@@ -1,3 +1,27 @@
+
+//form variables
+$sb-field-margin-bottom: ($base-block-space * 1);
+$sb-field-disabled-background: $gray-0;
+$sb-field-disabled-border: $input-border-width solid $gray-0;
+$sb-field-disabled-opacity: 0.45;
+$sb-input-background-color: $white-color;
+$sb-input-font-size: 0.8571rem;
+$sb-input-line-height: 1.5;
+$sb-input-padding: 0.5714rem;
+$sb-input-color: #333;
+$sb-input-border-radius: .2143rem;
+$sb-input-border-normal: $input-border-width solid $gray-200;
+$sb-input-border-focus: $input-border-width solid $primary-600;
+$sb-input-border-hover: $input-border-width solid $primary-300; 
+$sb-input-border-error: $input-border-width solid $red-400;
+$sb-input-border-success: $input-border-width solid $secondary-200;
+
+/* sb-input label and text */
+$sb-error-text: $red-400;
+$sb-success-text: $secondary-200;
+$sb-label-font-size: 0.8571rem;
+
+
 /* form element styles */
 
 #{$all-text-inputs} {
