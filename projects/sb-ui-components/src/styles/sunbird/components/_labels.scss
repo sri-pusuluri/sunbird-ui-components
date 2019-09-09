@@ -2,7 +2,7 @@
 .sb-label {
     display: inline-block;
     border: 1px solid;
-    color: $white-color;
+    color: $white;
     line-height: inherit;
     @include border-radius(3px);
     text: {

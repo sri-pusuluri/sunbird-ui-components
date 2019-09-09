@@ -1,71 +1,81 @@
+@import "../../styles/sunbird/base/variables";
+@import "../../styles/sunbird/mixins/mixins";
+
 /* sb card component css */
 
 .sb__DesktopOnly {
   display: none;
-  @media screen and (min-width: 768px) {
+  @include respond-above(sm) {
     display: block;
   }
 }
 
-// sb card grid & flex
+// sb card grid & flex 
 .sbcard__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 0rem;
-  @media screen and (min-width: 768px) {
+  @include respond-above(sm) {
     grid-gap: 1rem;
   }
 }
 
 .sbcard__flex {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   sb-card {
-      margin-bottom: 16px;
-      min-width:320px; 
-      margin-right: 16px;
+    margin-bottom: 16px;
+    min-width: 320px;
+    margin-right: 16px;
   }
   &--wrap {
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
   }
+}
+
+.sbscroll {
+&--X {
+  overflow-x:auto;
+}
 }
 
 // sb card css
 .sbcard {
   width: 100%;
   border-radius: 0px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
   cursor: pointer;
   position: relative;
-  @media screen and (min-width: 768px) {
+  border-bottom: 1px solid $gray-0;
+  @include respond-above(sm) {
     border-radius: 2px;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16);
+    border-bottom: 0px solid $gray-0;
   }
   &--resource {
   }
   &--course {
   }
-  &__main_area {
+  &__main-area {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 8px;
-    height: 88px;
+    padding: $base-block-space;
+    height: $base-block-space * 11;    
+    border-bottom: 1px solid var(--gray-0);
   }
   &__img {
     height: 76px;
     width: 76px;
     overflow: hidden;
-    margin-right: 8px;
+    margin-right: $base-block-space;
     flex: inherit;
-    @media screen and (min-width: 768px) {
-      flex: 0 0 76px;
-    }
+    flex: 0 0 76px;
     img {
       width: 100%;
     }
@@ -73,14 +83,14 @@
   &__info {
   }
   &__title {
-    color: #333333;
-    font-size: 14px;
-    margin-bottom: 0px;
+    color: $gray-800;
+    font-size: $font-size-normal;
+    margin: 0px;
     line-height: normal;
   }
   &__meta1 {
-    color: #979797;
-    font-size: 12px;
+    color: $gray-300;
+    font-size: $font-size-sm;
     display: inline-flex;
     align-items: center;
   }
@@ -88,26 +98,25 @@
     width: 4px;
     height: 4px;
     border-radius: 100%;
-    background-color: #d8d8d8;
+    background-color: $gray-100;
     display: inline-block;
     margin: 0px 8px;
   }
   &__moreinfo {
-    border-top: 1px solid #e9e5e5;
     border-radius: 0 0 2px 2px;
-    background-color: #fafafa;
+    background-color: $gray-0;
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
-    padding: 8px;
-    max-height: 56px;
+    padding: $base-block-space;
+    min-height: 56px;
   }
 
   &__meta2 {
-    color: #666666;
-    font-size: 12px;
-    line-height: 14px;
+    color: $gray-400;
+    font-size: $font-size-sm;
+    line-height: $font-size-normal;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -138,7 +147,7 @@
     padding: 0 8px 0px 4px;
     color: #fff;
     margin-right: -8px;
-    font-size: 11px;
+    font-size: $font-size-xs;
     display: flex;
     align-items: center;
     &:before {
@@ -147,7 +156,7 @@
       height: 0;
       border-width: 10px 5px;
       border-style: solid;
-      border-color: #999 #999 #999 transparent;
+      border-color: $gray-200 $gray-200 $gray-200 transparent;
       position: absolute;
       left: -10px;
     }
@@ -157,7 +166,7 @@
   height: 4px;
   position: absolute;
   margin: 0px 0 0px;
-  background: #999;
+  background: $gray-200;
   border-radius: 0px;
   box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
   width: 100%;
@@ -218,26 +227,26 @@
   }
 }
 .orange > span {
-  background-color: #f1a165;
+  background-color: $tertiary-0;
   background-image: -webkit-gradient(
     linear,
     left top,
     left bottom,
-    color-stop(0, #f1a165),
-    color-stop(1, #f36d0a)
+    color-stop(0, $tertiary-100),
+    color-stop(1, $tertiary-400)
   );
-  background-image: -webkit-linear-gradient(#f1a165, #f36d0a);
+  background-image: -webkit-linear-gradient($tertiary-100, $tertiary-400);
 }
 .red > span {
-  background-color: #f0a3a3;
+  background-color: $red-0;
   background-image: -webkit-gradient(
     linear,
     left top,
     left bottom,
-    color-stop(0, #f0a3a3),
-    color-stop(1, #f42323)
+    color-stop(0, $red-100),
+    color-stop(1, $red-400)
   );
-  background-image: -webkit-linear-gradient(#f0a3a3, #f42323);
+  background-image: -webkit-linear-gradient($red-100, $red-400);
 }
 
 .nostripes > span > span,
@@ -248,11 +257,10 @@
 }
 
 .sb__ellipsis {
-  cursor: pointer;
-  overflow: hidden;
+  -webkit-line-clamp: 1;
+  overflow : hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   &--two {
     -webkit-line-clamp: 2;
