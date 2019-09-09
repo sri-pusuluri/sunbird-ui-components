@@ -10,38 +10,6 @@
   }
 }
 
-// sb card grid & flex 
-.sbcard__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  grid-gap: 0rem;
-  @include respond-above(sm) {
-    grid-gap: 1rem;
-  }
-}
-
-.sbcard__flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  sb-card {
-    margin-bottom: 16px;
-    min-width: 320px;
-    margin-right: 16px;
-  }
-  &--wrap {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-}
-
-.sbscroll {
-&--X {
-  overflow-x:auto;
-}
-}
-
 // sb card css
 .sbcard {
   width: 100%;
