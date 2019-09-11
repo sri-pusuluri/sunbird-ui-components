@@ -1,39 +1,24 @@
-[![GitHub release](https://img.shields.io/github/release/fbrctr/fabricator.svg)]()
-[![Build Status](https://travis-ci.org/fbrctr/fabricator.svg)](https://travis-ci.org/fbrctr/fabricator)
-[![devDependency Status](https://david-dm.org/fbrctr/fabricator/dev-status.svg)](https://david-dm.org/fbrctr/fabricator#info=devDependencies)
-[![Join the chat at https://gitter.im/fbrctr/fabricator](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/fbrctr/fabricator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# SB UI Components NPM Library
 
-<p align="center">
-  <img src="http://fbrctr.github.io/assets/toolkit/images/logo.svg" width="500">
-</p>
+NPM Package - https://www.npmjs.com/package/sb-ui-components
 
-# Fabricator
+## Creating Components in Sunbird UI Components NPM Library
 
-> _fabricate_ - to make by assembling parts or sections.
+Run `ng generate component component-name --project sb-ui-components` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project sb-ui-components`.
+> Note: Don't forget to add `--project sb-ui-components` or else it will be added to the default project in your `angular.json` file. 
 
-Fabricator is a tool for building website UI toolkits - _think ["Tiny Bootstraps, for Every Client"](http://daverupert.com/2013/04/responsive-deliverables/#tiny-bootstraps-for-every-client)_
+## Building Library
 
-## Quick Start
+Run nodemon while in development mode. or else run `ng build sb-ui-components` to build the project. The build artifacts will be stored in the `dist/sb-ui-components` directory.
 
-```shell
-$ curl -L https://github.com/fbrctr/fabricator/archive/master.tar.gz | tar zx --strip 1
-$ npm start
-```
+## Publishing NPM Package
 
-## Documentation
+After building your library with `ng build sb-ui-components`, run command `npm run publish`.
 
-#### [Read the docs →](http://fbrctr.github.io/docs)
+## Regenerate Github Site
 
-## Demo
+Run command `npm run github`, and push changes to github.
 
-#### [Default Fabricator Instance →](http://fbrctr.github.io/demo)
+## Running unit tests
 
-## Credits
-
-Created by [Luke Askew](http://twitter.com/lukeaskew).
-
-Logo by [Abby Putinski](https://abbyputinski.com/)
-
-## License
-
-[The MIT License (MIT)](http://opensource.org/licenses/mit-license.php)
+Run `ng test sb-ui-components` to execute the unit tests via [Karma](https://karma-runner.github.io).
