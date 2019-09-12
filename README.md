@@ -22,3 +22,34 @@ Run command `npm run github`, and push changes to github.
 ## Running unit tests
 
 Run `ng test sb-ui-components` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Using in Angular application
+
+Here are the steps to use this library.
+
+
+1) Install Sunbird Components Library
+   ```
+      npm i --save sb-ui-components
+   ```
+
+2) Add Global CSS in `angular.json` -
+    ```
+      "styles": [
+          ...,
+          "dist/sb-ui-components/scss/styles.scss",
+          ...
+          ],
+    ```
+
+3) Import Library in `app.module.ts` -
+   ```
+      import { SbUiComponentsModule } from 'sb-ui-components';
+      @NgModule({
+        ...
+        imports: [SbUiComponentsModule, ...],
+        ...
+      })
+      export class YourAppModule {
+      }
+   ``

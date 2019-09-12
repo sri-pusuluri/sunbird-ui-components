@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { SbUiComponentsComponent } from './sb-ui-components.component';
 import { CardComponent } from './card/card.component';
-import { ModalComponent } from './modal/modal.component';
+import { ModalComponent , ModalHeaderComponent, ModalContentComponent, ModalActionsComponent } from './modal/modal.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
-  declarations: [SbUiComponentsComponent, CardComponent, ModalComponent],
+  declarations: [CardComponent, ModalComponent, ModalHeaderComponent, ModalContentComponent, ModalActionsComponent, ButtonComponent],
   imports: [
   ],
-  exports: [SbUiComponentsComponent, CardComponent, ModalComponent]
+  exports: [CardComponent, ModalComponent, ModalHeaderComponent, ModalContentComponent, ModalActionsComponent, ButtonComponent]
 })
 export class SbUiComponentsModule { }
