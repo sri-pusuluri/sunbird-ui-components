@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Injectable, NgModule, Component, Input, defineInjectable } from '@angular/core';
 
 /**
@@ -63,7 +64,17 @@ ModalComponent.decorators = [
     { type: Component, args: [{
                 selector: 'sb-modal',
                 template: `
-  <div class="sbmodalWrapper sbmodal--md sbmodal--primary sbmodal--isNotClosable">
+  <div
+    class="sbmodalWrapper sbmodal--md"
+    [class.sbmodal--isNotClosable]="isClosable==false"
+    [ngClass]="{
+      'sbmodal--primary': type=='primary',
+      'sbmodal--warning': type=='warning',
+      'sbmodal--tertiary': type=='tertiary',
+      'sbmodal--success': type=='success',
+      'sbmodal--secondary': type=='secondary',
+      'sbmodal--error': type=='error'
+    }">
     <div class="sbmodal">
       <ng-content></ng-content>
     </div>
@@ -207,7 +218,7 @@ class SbUiComponentsModule {
 SbUiComponentsModule.decorators = [
     { type: NgModule, args: [{
                 declarations: [CardComponent, ModalComponent, ModalHeaderComponent, ModalContentComponent, ModalActionsComponent, ButtonComponent],
-                imports: [],
+                imports: [CommonModule],
                 exports: [CardComponent, ModalComponent, ModalHeaderComponent, ModalContentComponent, ModalActionsComponent, ButtonComponent]
             },] }
 ];

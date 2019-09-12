@@ -7,7 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'sb-modal',
   template: `
-  <div class="sbmodalWrapper sbmodal--md sbmodal--primary sbmodal--isNotClosable">
+  <div
+    class="sbmodalWrapper sbmodal--md"
+    [class.sbmodal--isNotClosable]="isClosable==false"
+    [ngClass]="{
+      'sbmodal--primary': type=='primary',
+      'sbmodal--warning': type=='warning',
+      'sbmodal--tertiary': type=='tertiary',
+      'sbmodal--success': type=='success',
+      'sbmodal--secondary': type=='secondary',
+      'sbmodal--error': type=='error'
+    }">
     <div class="sbmodal">
       <ng-content></ng-content>
     </div>
