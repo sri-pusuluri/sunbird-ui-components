@@ -21,7 +21,7 @@ async function bundleScss() {
   }
 
   if (found) {
-    await writeFile('./dist/sb-ui-components/lib/styles.scss', bundledContent);
+    await writeFile('./dist/sb-ui-components/scss/styles.scss', bundledContent);
   }
 }
 
