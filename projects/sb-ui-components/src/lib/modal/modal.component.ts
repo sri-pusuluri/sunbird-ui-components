@@ -7,9 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'sb-modal',
   template: `
-  <div class="sbmodal--overlay"></div>
-  <div class="sbmodal sbmodal--md sbmodal--primary sbmodal--isNotClosable">
-    <ng-content></ng-content>
+  <div class="sbmodalWrapper sbmodal--md sbmodal--primary sbmodal--isNotClosable">
+    <div class="sbmodal">
+      <ng-content></ng-content>
+    </div>
   </div>
   `,
   styleUrls: ['./modal.component.scss']
