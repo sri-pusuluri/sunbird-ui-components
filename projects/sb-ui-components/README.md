@@ -13,8 +13,9 @@ Here are the steps to use this library.
 2) Add Global CSS in `angular.json` -
     ```
       "styles": [
-          "src/styles.scss",
-          "dist/sb-ui-components/lib/styles.scss"
+          ...,
+          "dist/sb-ui-components/styles.scss",
+          ...
           ],
     ```
 
