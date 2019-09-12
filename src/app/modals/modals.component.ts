@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './modals.component.html'
 })
 export class ModalsComponent implements OnInit {
-
+  normalmodal;
+  shownormalmodal;
   constructor() { }
-
   ngOnInit() {
   }
 
