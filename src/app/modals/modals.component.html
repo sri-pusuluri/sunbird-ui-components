@@ -1,5 +1,19 @@
 <!--Page Content-->
-<sb-modal title="Modal Heading"></sb-modal>
+<sb-modal color="primary" size="medium"  isClosable="false">
+  <sb-modal-header>{{title}}</sb-modal-header>
+  <sb-modal-content isScrollable="false">
+    Modal Content / Form Elements etc.,
+  </sb-modal-content>
+  <sb-modal-footer align="right">
+    <sb-button size="" color="" type="submit">{{Yes}}</sb-button>
+    <sb-button size="" color="" type="button">{{No}}</sb-button>
+    <sb-button size="" color="" type="button">{{Maybe}}</sb-button>
+      <!-- <button type="button" class="sbbtn sbbtn--sm">Yes</button>
+      <button type="button" class="sbbtn sbbtn--sm">No</button>
+      <button type="button" class="sbbtn sbbtn--sm">Maybe</button> -->
+  </sb-modal-footer>
+</sb-modal>
+
 <!--Large Modal-->
 <div class="docs-sections hide">
   <h4 class="docs-sectionHeading">
