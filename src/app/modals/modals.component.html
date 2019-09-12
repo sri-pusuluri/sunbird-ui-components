@@ -14,26 +14,24 @@
       Show Normal Modal
     </button>
 
+<<<<<<< HEAD
+    <sb-modal *ngIf="shownormalmodal" [isClosable]="true" [size]="large" [type]="normal" (dismissed)="shownormalmodal = !shownormalmodal">
+      <sb-modal-header [showCloseButton]="true">Modal Heading</sb-modal-header>
+=======
     <sb-modal *ngIf="shownormalmodal" [isClosable]="true" [size]="large" [type]="primary" (dismissed)="shownormalmodal = !shownormalmodal">
 
       <sb-modal-header [showCloseButton]="true">
         Modal Heading
       </sb-modal-header>
 
+>>>>>>> 57c8bcd931ba33f782657f316c1813f1a2e08073
       <sb-modal-content [showScroll]="true">
         Modal Content
       </sb-modal-content>
-
       <sb-modal-actions>
-        <sb-button [type]="primary" [align]="end" (click)="shownormalmodal = !shownormalmodal">
-          Yes
-        </sb-button>
-        <sb-button [type]="secondary" [align]="end" (click)="shownormalmodal = !shownormalmodal">
-          No
-        </sb-button>
-        <sb-button [type]="secondary" [align]="starts" (click)="shownormalmodal = !shownormalmodal">
-          Maybe
-        </sb-button>
+        <sb-button [type]="primary" [align]="end" (click)="shownormalmodal = !shownormalmodal">Yes</sb-button>
+        <sb-button [type]="secondary" [align]="end" (click)="shownormalmodal = !shownormalmodal">No</sb-button>
+        <sb-button [type]="secondary" [align]="starts" (click)="shownormalmodal = !shownormalmodal">Maybe</sb-button>
       </sb-modal-actions>
 
     </sb-modal>
