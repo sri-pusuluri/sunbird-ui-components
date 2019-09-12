@@ -16,7 +16,7 @@
   align-items: center;
   sb-card {
       margin-bottom: 16px;
-      max-width:320px; 
+      min-width:320px; 
       margin-right: 16px;
   }
   &--wrap {
@@ -28,6 +28,7 @@
 .sbscroll {
 &--X {
   overflow-x:auto;
+  overflow-y:hidden;
 }
 }
 
