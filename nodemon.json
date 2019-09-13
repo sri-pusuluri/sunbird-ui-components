@@ -2,5 +2,5 @@
   "watch": ["projects/sb-ui-components/","src"],
   "ext": "ts,scss,js,html,svg,png,jpeg",
   "ignore": [],
-  "exec": "ng build sb-ui-components && mkdir ./dist/sb-ui-components/scss/ && ts-node projects/sb-ui-components/scripts/css-bundle.ts && cp -r projects/sb-ui-components/src/images/ dist/sb-ui-components/images/ && ng s --port 4500"
+  "exec": "ng build sb-ui-components && mkdir ./dist/sb-ui-components/assets/ && mkdir ./dist/sb-ui-components/assets/scss/ && ts-node projects/sb-ui-components/scripts/css-bundle.ts && cp -r projects/sb-ui-components/src/assets/images/ dist/sb-ui-components/assets/images/ && ng s --port 4500"
 }
