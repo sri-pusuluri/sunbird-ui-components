@@ -1,10 +1,15 @@
 import { Component, OnInit, Input, ViewEncapsulation, ElementRef, OnDestroy } from '@angular/core';
 
 /************************
- * Modal Wapper
- * Syles do not apply to Child components like header, content and actions
- * because the css selector gets modified for default angular encapsulation mode
- * hence encapsulation: ViewEncapsulation.None is added
+ *    Modal Wapper
+ ************************
+ * size: sm,md,lg and full
+ * theme: primary, warning, tertiary, success, secondary and error
+ * isClosable: true and false
+ * customClass: Add custom classes to modal wrapper
+ * Note: Syles do not apply to Child components like header, content and actions
+ *       because the css selector gets modified for default angular encapsulation mode
+ *       hence encapsulation: ViewEncapsulation.None is added
  * https://stackblitz.com/edit/angular-6-custom-modal-dialog
  * *********************/
 
@@ -14,7 +19,7 @@ import { Component, OnInit, Input, ViewEncapsulation, ElementRef, OnDestroy } fr
   <div
     *ngIf="!showmodal"
     (click)="showmodal = showmodal"
-    class="sbmodalWrapper"
+    class="sbmodalWrapper {{customClass}}"
     [ngClass]="{
       'sbmodal--isNotClosable': isClosable == false,
       'sbmodal--isClosable': isClosable == true,
@@ -42,7 +47,6 @@ import { Component, OnInit, Input, ViewEncapsulation, ElementRef, OnDestroy } fr
 export class ModalComponent implements OnInit, OnDestroy {
   private element: any;
   showmodal: boolean;
-  modal;
   @Input() isClosable: boolean;
   @Input() size: string;
   @Input() theme: string;
@@ -59,7 +63,10 @@ export class ModalComponent implements OnInit, OnDestroy {
 }
 
 /************************
- * Modal Header
+ *    Modal Header
+ ************************
+ * hideCloseButton is an optional boolean config.
+ * If set true then close button wont be shown on modal header.
  * *********************/
 
 @Component({
@@ -67,51 +74,60 @@ export class ModalComponent implements OnInit, OnDestroy {
   template: `
   <div class="sbmodal__header">
     <h4><ng-content></ng-content></h4>
-    <button
+    <a
+      *ngIf="!hideCloseButton"
       title="Close"
       class="i-link sbbtn-close">
         <svg class="sbicon sbicon--close sbicon--xs sbicon--white">
-          <use xlink:href="../../images/sprite.svg#close"></use>
+          <use xlink:href="images/sprite.svg#close"></use>
         </svg>
-    </button>
+    </a>
   </div>`,
   styleUrls: ['./modal.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class ModalHeaderComponent implements OnInit {
-  @Input() showCloseButton: boolean;
+  @Input() hideCloseButton: boolean;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
 
 /************************
- * Modal Content
+ *    Modal Content
+ ************************
+ * isScrollable is an optional boolean config.
+ * If set true then content box will have scrollbar
+ * otherwise it will be lengthy as per the content.
  * *********************/
 
 @Component({
   selector: 'sb-modal-content',
   template: `
-  <div class="sbmodal__content sbmodal__content-scroll">
+  <div
+    class="sbmodal__content"
+    [ngClass]="{
+      'sbmodal__content-scroll': isScrollable == true
+    }"
+    >
     <ng-content></ng-content>
   </div>`,
   styleUrls: ['./modal.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class ModalContentComponent implements OnInit {
-  @Input() showScroll: boolean;
+  @Input() isScrollable: boolean;
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
 
 /************************
- * Modal Actions
+ *   Modal Actions
  * *********************/
 
 @Component({
