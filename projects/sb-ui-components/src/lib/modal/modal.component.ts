@@ -1,40 +1,60 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, ElementRef, OnDestroy } from '@angular/core';
 
 /************************
  * Modal Wapper
+ * Syles do not apply to Child components like header, content and actions
+ * because the css selector gets modified for default angular encapsulation mode
+ * hence encapsulation: ViewEncapsulation.None is added
+ * https://stackblitz.com/edit/angular-6-custom-modal-dialog
  * *********************/
 
 @Component({
   selector: 'sb-modal',
   template: `
   <div
-    class="sbmodalWrapper sbmodal--md"
-    [class.sbmodal--isNotClosable]="isClosable==false"
+    *ngIf="!showmodal"
+    (click)="showmodal = showmodal"
+    class="sbmodalWrapper"
     [ngClass]="{
-      'sbmodal--primary': type=='primary',
-      'sbmodal--warning': type=='warning',
-      'sbmodal--tertiary': type=='tertiary',
-      'sbmodal--success': type=='success',
-      'sbmodal--secondary': type=='secondary',
-      'sbmodal--error': type=='error'
-    }">
+      'sbmodal--isNotClosable': isClosable == false,
+      'sbmodal--isClosable': isClosable == true,
+      'sbmodal--primary': theme == 'primary',
+      'sbmodal--warning': theme == 'warning',
+      'sbmodal--tertiary': theme == 'tertiary',
+      'sbmodal--success': theme == 'success',
+      'sbmodal--secondary': theme == 'secondary',
+      'sbmodal--error': theme == 'error',
+      'sbmodal--sm': size == 'sm',
+      'sbmodal--md': size == 'md',
+      'sbmodal--lg': size == 'lg',
+      'sbmodal--full': size == 'full'
+    }"
+    >
     <div class="sbmodal">
       <ng-content></ng-content>
     </div>
   </div>
   `,
-  styleUrls: ['./modal.component.scss']
+  styleUrls: ['./modal.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit, OnDestroy {
+  private element: any;
+  showmodal: boolean;
+  modal;
   @Input() isClosable: boolean;
   @Input() size: string;
-  @Input() type: string;
+  @Input() theme: string;
+  @Input() customClass: string;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private el: ElementRef) {
+    this.element = el.nativeElement;
   }
+
+  ngOnInit() {}
+
+  ngOnDestroy() {}
 
 }
 
@@ -47,16 +67,16 @@ export class ModalComponent implements OnInit {
   template: `
   <div class="sbmodal__header">
     <h4><ng-content></ng-content></h4>
-    <a
-      href="javascript:void(0)"
+    <button
       title="Close"
       class="i-link sbbtn-close">
         <svg class="sbicon sbicon--close sbicon--xs sbicon--white">
-          <use xlink:href="../styles/images/sprite.svg#close"></use>
+          <use xlink:href="../../images/sprite.svg#close"></use>
         </svg>
-    </a>
+    </button>
   </div>`,
-  styleUrls: ['./modal.component.scss']
+  styleUrls: ['./modal.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ModalHeaderComponent implements OnInit {
   @Input() showCloseButton: boolean;
@@ -78,7 +98,8 @@ export class ModalHeaderComponent implements OnInit {
   <div class="sbmodal__content sbmodal__content-scroll">
     <ng-content></ng-content>
   </div>`,
-  styleUrls: ['./modal.component.scss']
+  styleUrls: ['./modal.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ModalContentComponent implements OnInit {
   @Input() showScroll: boolean;
@@ -99,7 +120,8 @@ export class ModalContentComponent implements OnInit {
   <div class="sbmodal__actions">
     <ng-content></ng-content>
   </div>`,
-  styleUrls: ['./modal.component.scss']
+  styleUrls: ['./modal.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ModalActionsComponent implements OnInit {
 

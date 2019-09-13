@@ -1,6 +1,6 @@
-@import "../../styles/sunbird/base/variables";
-@import "../../styles/sunbird/mixins/mixins";
-@import "../../styles/sunbird/components/buttons";
+@import "../../assets/styles/sunbird/base/variables";
+@import "../../assets/styles/sunbird/mixins/mixins";
+@import "../../assets/styles/sunbird/components/buttons";
 
 // modal component variables
 $sb-modal-header-bg: var(--primary-400);
@@ -79,6 +79,7 @@ $sb-modal-corner-radius: 8px;
 
 /* sb modal wrapper  */
 .sbmodalWrapper {
+  //display: none;
   background: rgba(0, 0, 0, 0.35);
   position: fixed;
   transform-origin: center center;
@@ -99,6 +100,10 @@ $sb-modal-corner-radius: 8px;
   will-change: opacity;
   &--noOverlay {
     background: none;
+  }
+
+  &.sbmodal--open {
+    display: block;
   }
 
   //sbbtn-close sbicon sbicon--xs sbicon--white

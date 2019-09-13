@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "github": "ng build sb-ui-components-app --prod --base-href /sunbird-ui-components/dist/sb-ui-components-app/",
+    "github": "ng build sb-ui-components-app --prod --base-href /sunbird-ui-components/site/ && cp -r ./dist/sb-ui-components-app/ ./site/",
     "publish": "cd projects/sb-ui-components && npm version patch && cd ../.. && ng build sb-ui-components && ts-node ./projects/sb-ui-components/scripts/css-bundle.ts &&  cd dist/sb-ui-components && npm publish",
     "publish-minor": "cd projects/sb-ui-components && npm version minor && cd ../.. && ng build sb-ui-components && ts-node ./projects/sb-ui-components/scripts/css-bundle.ts &&  cd dist/sb-ui-components && npm publish",
     "publish-major": "cd projects/sb-ui-components && npm version major && cd ../.. && ng build sb-ui-components && ts-node ./projects/sb-ui-components/scripts/css-bundle.ts &&  cd dist/sb-ui-components && npm publish"
