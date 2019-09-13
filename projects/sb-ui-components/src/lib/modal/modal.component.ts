@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation, ElementRef, OnDestroy } from '@angular/core';
+import { ModalService } from '../_services';
 
 /************************
  *    Modal Wapper
@@ -47,18 +48,56 @@ import { Component, OnInit, Input, ViewEncapsulation, ElementRef, OnDestroy } fr
 export class ModalComponent implements OnInit, OnDestroy {
   private element: any;
   showmodal: boolean;
+  @Input() id: string;
   @Input() isClosable: boolean;
   @Input() size: string;
   @Input() theme: string;
   @Input() customClass: string;
 
-  constructor(private el: ElementRef) {
+  constructor(private modalService: ModalService, private el: ElementRef) {
     this.element = el.nativeElement;
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    const modal = this;
 
-  ngOnDestroy() {}
+    // ensure id attribute exists
+    if (!this.id) {
+      console.error('modal must have an id');
+      return;
+    }
+
+    // move element to bottom of page (just before </body>) so it can be displayed above everything else
+    document.body.appendChild(this.element);
+
+    // close modal on background click
+    this.element.addEventListener('click', (e: any) => {
+      if (e.target.classList.contains('sbmodalWrapper')) {
+        modal.close();
+      }
+    });
+
+    // add self (this modal instance) to the modal service so it's accessible from controllers
+    this.modalService.add(this);
+  }
+
+  // remove self from modal service when component is destroyed
+  ngOnDestroy(): void {
+    this.modalService.remove(this.id);
+    this.element.remove();
+  }
+
+  // open modal
+  open(): void {
+    this.element.style.display = 'block';
+    document.body.classList.add('sbmodalWrapper-open');
+  }
+
+  // close modal
+  close(): void {
+    this.element.style.display = 'none';
+    document.body.classList.remove('sbmodalWrapper-open');
+  }
 
 }
 
@@ -74,14 +113,14 @@ export class ModalComponent implements OnInit, OnDestroy {
   template: `
   <div class="sbmodal__header">
     <h4><ng-content></ng-content></h4>
-    <a
+    <button
       *ngIf="!hideCloseButton"
       title="Close"
       class="i-link sbbtn-close">
         <svg class="sbicon sbicon--close sbicon--xs sbicon--white">
-          <use xlink:href="images/sprite.svg#close"></use>
+          <use xlink:href="assets/images/sprite.svg#close"></use>
         </svg>
-    </a>
+    </button>
   </div>`,
   styleUrls: ['./modal.component.scss'],
   encapsulation: ViewEncapsulation.None
