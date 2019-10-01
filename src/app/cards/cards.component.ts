@@ -56,6 +56,42 @@ export class CardsComponent implements OnInit {
       img: 'assets/images/book.png',
       org: 'Academy of European Law (ERA)',
       category: 'Book'
+    },
+    {
+      title: 'Jugs and Mugs_Bunny and Banno celebrate their Wedding Anniversary',
+      type: 'course',
+      subject: 'Maths',
+      medium: 'English',
+      class: 'VII',
+      topic: 'Global positioning system and its application',
+      subtopic: 'Limits of artificial intelligence',
+      img: 'assets/images/book.png',
+      org: 'CBSE',
+      category: 'Book'
+    },
+    {
+      title: 'बाल महाभारत कथा',
+      type: 'course',
+      subject: 'Subject Name',
+      medium: 'Medium Name',
+      class: 'Class Name',
+      topic: 'Global positioning system and its application',
+      subtopic: 'Limits of artificial intelligence',
+      img: 'assets/images/book.png',
+      org: 'Academy of European Law (ERA)',
+      category: 'Practice'
+    },
+    {
+      title: 'Data Structure and Algorithm - Assignment 1 Paperback',
+      type: 'course',
+      subject: 'Subject Name',
+      medium: 'Medium Name',
+      class: 'Class Name',
+      topic: 'Global positioning system and its application',
+      subtopic: 'Limits of artificial intelligence',
+      img: 'assets/images/book.png',
+      org: 'Academy of European Law (ERA)',
+      category: 'Book'
     }
   ];
 

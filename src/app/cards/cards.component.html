@@ -8,15 +8,47 @@
 
   <!--Display output-->
   <div class="docs-sectionDemoCode">
+      <h2 class="my-24">SB Card Grid Title</h2>
     <div class="sbcard__grid">
       <sb-card  *ngFor="let card of cards" [data]="card"></sb-card>
     </div>
 
+
+    <h2 class="my-24">Carousel Title</h2>
     <div class="sbscroll sbscroll--X mt-32">
     <div class="sbcard__flex">
-      <sb-card  *ngFor="let card of cards" [data]="card"></sb-card>
+      <sb-card *ngFor="let card of cards" [data]="card"></sb-card>
     </div>
     </div>
+
+
+
+    <style>
+      .sb-list-grid {
+        display:grid;
+        /* grid-template-columns: repeat(auto-fill, minmax()) */
+      }
+      </style>
+      <div class="ui container sb-category-grid mt-24">
+      
+        <div class="sb-category-item sb-category">
+          <h4>Maths <span>10</span></h4>
+          <sb-card *ngFor="let math of maths" [data]="math"></sb-card>
+        </div>
+        <div class="sb-category-item sb-category">
+          <h4>Social <span>10</span></h4>
+          <sb-card *ngFor="let social of socials" [data]="social"></sb-card>
+        </div>
+        <div class="sb-category-item sb-category">
+          <h4>Maths <span>10</span></h4>
+          <sb-card *ngFor="let science of sciences" [data]="science"></sb-card>
+        </div>
+        <div class="sb-category-item sb-category">
+          <h4>Maths <span>10</span></h4>
+          <sb-card *ngFor="let book of books" [data]="book"></sb-card>
+        </div>
+      
+      </div>
 
   </div>
   <!--/Display output-->

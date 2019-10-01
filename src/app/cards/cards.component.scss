@@ -2,7 +2,7 @@
 // sb card grid & flex
 .sbcard__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
   grid-gap: 0rem;
   @media screen and (min-width: 768px) {
     grid-gap: 1rem;
@@ -16,8 +16,9 @@
   align-items: center;
   sb-card {
       margin-bottom: 16px;
-      min-width:320px; 
-      margin-right: 16px;
+      min-width: 292px;
+    margin-right: 16px;
+    flex: 1;
   }
   &--wrap {
     flex-wrap:wrap;
@@ -29,6 +30,9 @@
 &--X {
   overflow-x:auto;
   overflow-y:hidden;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar { width: 0 !important;height:0 !important; }
 }
 }
 

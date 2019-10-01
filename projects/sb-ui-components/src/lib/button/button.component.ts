@@ -9,7 +9,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-  @Input() type: string;
+  @Input() theme: string;
   @Input() align: string;
 
   constructor() { }
